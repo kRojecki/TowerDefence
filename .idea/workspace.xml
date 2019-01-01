@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44e1ef21-0af6-4ddb-91b3-e795e96bd0e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Game/Core/GameArea.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/GameArea.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/EmptyTile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/EmptyTile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Tile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Objects/TurretTile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/TurretTile.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/Core/GameArea.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="480">
               <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -69,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game/Objects/TurretTile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="99" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+            <state relative-caret-position="437">
+              <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -246,6 +243,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18614718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -328,7 +326,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/Core/GameArea.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
+        <state relative-caret-position="480">
           <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -338,8 +336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/Objects/TurretTile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="99" selection-start-line="15" selection-start-column="99" selection-end-line="15" selection-end-column="99" />
+        <state relative-caret-position="437">
+          <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
