@@ -8,17 +8,24 @@ class Tile:
     borderColor = (90, 90, 90)
     backgroundColor = (10, 10, 10)
     tilePosition = [0, 0]
+    rectPosition = ()
 
     def __init__(self, position):
-        self.position = position
+        self.tilePosition = position
+        self.rectPosition = self.calculatePositionAndSize()
 
     # calculate position and size of field to draw
-    def calculatePositionAndSize(self, position):
-        return ((position[Position.Y] * GameArea.GameArea.fieldSize),
-                (position[Position.X] * GameArea.GameArea.fieldSize), GameArea.GameArea.fieldSize + 1, GameArea.GameArea.fieldSize + 1)
+    def calculatePositionAndSize(self):
+        return ((self.tilePosition[Position.Y] * GameArea.GameArea.fieldSize),
+                (self.tilePosition[Position.X] * GameArea.GameArea.fieldSize), GameArea.GameArea.fieldSize + 1, GameArea.GameArea.fieldSize + 1)
 
     def draw(self, screen):
-        position = self.calculatePositionAndSize([self.position[Position.X], self.position[Position.Y]])
-        pygame.draw.rect(screen, self.borderColor, position, 1)
-        innerPosition = (position[Position.X] + 1, position[Position.Y] + 1, GameArea.GameArea.fieldSize - 1, GameArea.GameArea.fieldSize - 1)
+        self.__drawBorder(screen)
+        self.drawTileContent(screen)
+
+    def __drawBorder(self, screen):
+        pygame.draw.rect(screen, self.borderColor, self.rectPosition, 1)
+
+    def drawTileContent(self, screen):
+        innerPosition = (self.rectPosition[Position.X] + 1, self.rectPosition[Position.Y] + 1, GameArea.GameArea.fieldSize - 1, GameArea.GameArea.fieldSize - 1)
         pygame.draw.rect(screen, self.backgroundColor, innerPosition, 0)

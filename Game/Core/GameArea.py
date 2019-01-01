@@ -2,6 +2,7 @@ import pygame
 import math
 from Utils.Constant import Position
 from Game.Objects.EmptyTile import EmptyTile
+from Game.Objects.TurretTile import TurretTile
 from pygame import Surface
 
 class GameArea:
@@ -52,10 +53,11 @@ class GameArea:
         selectionColor = (10, 10, 10, 10)
 
         field.draw(self.screen)
+        #highlight
+        if selectedField[Position.X] == field.tilePosition[Position.X] and selectedField[Position.Y] == field.tilePosition[Position.Y]:
+            if(pygame.mouse.get_pressed()[0] == 1):
+                self.gameArea[selectedField[Position.X]][selectedField[Position.Y]] = TurretTile(field.tilePosition)
 
-        if selectedField[Position.X] == field.position[Position.X] and selectedField[Position.Y] == field.position[Position.Y]:
-            #pygame.draw.rect(self.screen, selectionColor, innerPosition, 0)
-            pass
 
     # Rewrite and move calculate logic from here, after adding additional surface
     # Fails when gameAreaMargin or game surface will be changed
@@ -70,6 +72,6 @@ class GameArea:
         y = y if y <= self.gameAreaDimesions[Position.Y] - 1 else -1
 
         if (x != -1 and y != -1 and pygame.mouse.get_pressed()[0] == 1):
-             print(self.gameArea[x][y].position);
+             print(self.gameArea[x][y].rectPosition);
 
         return [x, y];
