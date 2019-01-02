@@ -2,19 +2,23 @@ import pygame
 import math
 from Utils.Helper.TransformHelper.Dto.RotationResultDto import RotationResultDto
 
+
 class RotationHelper:
 
     @staticmethod
     def rotate(surface, angle):
 
-        rotatedSurface = pygame.transform.rotate(surface, angle)
+        rotated_surface = pygame.transform.rotate(surface, angle)
 
-        originalRect = surface.get_rect()
-        originalRectCenter = (originalRect.width /2, originalRect.height /2)
+        original_rect = surface.get_rect()
+        original_rect_center = (original_rect.width / 2, original_rect.height / 2)
 
-        rotatedRect = rotatedSurface.get_rect()
-        transformedRectCenter = (rotatedRect.width /2, rotatedRect.height /2)
+        rotated_rect = rotated_surface.get_rect()
+        transformed_rect_center = (rotated_rect.width / 2, rotated_rect.height / 2)
 
-        positionModifier = (math.floor(transformedRectCenter[0] - originalRectCenter[0]), math.floor(transformedRectCenter[1] - originalRectCenter[1]));
+        position_modifier = (
+            math.floor(transformed_rect_center[0] - original_rect_center[0]),
+            math.floor(transformed_rect_center[1] - original_rect_center[1])
+        )
 
-        return RotationResultDto(rotatedSurface, positionModifier)
+        return RotationResultDto(rotated_surface, position_modifier)
