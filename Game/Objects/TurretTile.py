@@ -3,38 +3,41 @@ import pygame
 from Game.Core import GameArea
 from Utils.Constant import Position
 from pygame import Surface
-from pygame import Rect
+
+from Utils.Helper.TransformHelper.RotationHelper import RotationHelper
+
 
 class TurretTile(Tile):
-    borderColor = (200, 90, 90)
-    backgroundColor = (100, 10, 10)
-    cannonRectOriginal = ()
-    rotation = 0;
+    _border_color = (200, 90, 90)
+    _background_color = (100, 10, 10)
+    _rotation = 0
 
-    def drawTileContent(self, screen):
-        innerPosition = (self.rectPosition[Position.X] + 1, self.rectPosition[Position.Y] + 1, GameArea.GameArea.fieldSize - 1, GameArea.GameArea.fieldSize - 1)
-        innerPosition2 = (self.rectPosition[Position.X] + 2, self.rectPosition[Position.Y] + 2, GameArea.GameArea.fieldSize - 3, GameArea.GameArea.fieldSize - 3)
-        pygame.draw.rect(screen, self.backgroundColor, innerPosition, 1)
-        pygame.draw.rect(screen, self.borderColor, innerPosition2, 1)
-        self.cannonRectOriginal = (GameArea.GameArea.fieldSize, GameArea.GameArea.fieldSize)
-        cannon = Surface(self.cannonRectOriginal,pygame.SRCALPHA)
-        cannonRect = [
-            ((GameArea.GameArea.fieldSize/2), GameArea.GameArea.fieldSize/5),
-            (GameArea.GameArea.fieldSize/5, (4*GameArea.GameArea.fieldSize)/5),
-            ((4* GameArea.GameArea.fieldSize)/5, (4*GameArea.GameArea.fieldSize)/5),
+    def draw_border(self, screen):
+        super().draw_border(screen)
+        second_border_rect = (self._rect_position[Position.X] + 2, self._rect_position[Position.Y] + 2,
+                              GameArea.GameArea.field_size - 3, GameArea.GameArea.field_size - 3)
+
+        pygame.draw.rect(screen, self._border_color, second_border_rect, 1)
+
+    def draw_tile_content(self, screen):
+        super().draw_tile_content(screen)
+        cannon = self.draw_cannon()
+        rotation_dto = RotationHelper.rotate(cannon, self._rotation)
+
+        blit_destination = (self._rect_position[Position.X] - rotation_dto.position_modifier[Position.X],
+                            self._rect_position[Position.Y] - rotation_dto.position_modifier[Position.Y])
+        screen.blit(rotation_dto.transformed_surface, blit_destination)
+
+        self._rotation = (self._rotation + 1) % 360
+
+    def draw_cannon(self):
+        cannon = Surface((GameArea.GameArea.field_size, GameArea.GameArea.field_size), pygame.SRCALPHA)
+        cannon_points = [
+            ((GameArea.GameArea.field_size / 2), GameArea.GameArea.field_size / 10),
+            (GameArea.GameArea.field_size / 5, (3.5 * GameArea.GameArea.field_size) / 5),
+            ((4 * GameArea.GameArea.field_size) / 5, (3.5 * GameArea.GameArea.field_size) / 5),
         ]
-        pygame.draw.polygon(cannon, self.borderColor, cannonRect, 1)
-        cannon = pygame.transform.rotate(cannon,self.rotation)
 
-        positionModifier = (0,0)
-        cannonRectNew = cannon.get_rect();
+        pygame.draw.polygon(cannon, self._border_color, cannon_points, 0)
 
-        positionModifier = ((self.cannonRectOriginal[0] - cannonRectNew.width)/2, (self.cannonRectOriginal[1] - cannonRectNew.height)/2)
-        print(positionModifier)
-        print(self.rectPosition[Position.X]-positionModifier[Position.X], self.rectPosition[Position.Y]-positionModifier[Position.Y])
-
-        blitDest = (self.rectPosition[Position.X]+positionModifier[Position.X], self.rectPosition[Position.Y]+positionModifier[Position.Y])
-        screen.blit(cannon, blitDest)
-        
-        self.rotation += 1;
-        print(cannon.get_rect())
+        return cannon
