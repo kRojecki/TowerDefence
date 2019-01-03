@@ -3,6 +3,7 @@ import pygame
 from Utils.Constant import Color
 from Game.Core.Screen.GameScreen import GameScreen
 from Game.Configuration.ConfigurationParser import ConfigurationParser
+from Game.Core.Handler.EventHandler import EventHandler
 
 
 class GameEngine:
@@ -14,14 +15,12 @@ class GameEngine:
 
     config = 0
 
+    input_controller = 0
+
     def init(self):
-
         self.config = ConfigurationParser.load_configuration()
-
+        self.input_controller = EventHandler()
         pygame.init()
-
-        self.current_screen = GameScreen()
-        self.current_screen.init_screen()
 
     def setup(self):
         size = (self.config.getint('DISPLAY', 'resolution.width'), self.config.getint('DISPLAY', 'resolution.height'))
@@ -32,8 +31,10 @@ class GameEngine:
         self.main_surface = pygame.display.set_mode(size)
         self.clock = pygame.time.Clock()
 
-    def run(self):
+        self.current_screen = GameScreen(self.config)
+        self.current_screen.init()
 
+    def run(self):
         self.loop()
 
     def loop(self):
@@ -54,10 +55,9 @@ class GameEngine:
             pygame.display.flip()
 
     def handle_system_events(self):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                self.exit()
+        self.input_controller.handle()
 
+    @staticmethod
     def exit(self):
         print(self.config.get('GAME', 'quit.message'))
         sys.exit()

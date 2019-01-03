@@ -4,15 +4,15 @@ from Game.Core.Screen.AbstractScreen import AbstractScreen
 
 class GameScreen(AbstractScreen):
 
-    gameArena = 0
+    gameArea = 0
 
-    def __init__(self):
-        self.gameArea = GameArea()
-        pass
+    def __init__(self, configuration):
+        super().__init__(configuration)
+        self.gameArea = GameArea(configuration)
 
-    def init_screen(self):
-        self.gameArea.init_field()
+    def init(self):
+        self.gameArea.init()
 
     def update(self, screen):
-        screen.blit(self.gameArea.update(), (10, 10))
+        self.gameArea.update(screen)
 
