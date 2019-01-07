@@ -1,0 +1,3 @@
+CLEAR = 0
+HOVER = 1
+CLICKED = 2

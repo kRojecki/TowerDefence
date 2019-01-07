@@ -1,6 +1,6 @@
 import pygame
 import math
-from Utils.Helper.TransformHelper.Dto.RotationResultDto import RotationResultDto
+from Game.Utils.Helper.TransformHelper.Dto.RotationResultDto import RotationResultDto
 
 
 class RotationHelper:

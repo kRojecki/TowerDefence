@@ -1,6 +1,6 @@
 import sys
 import pygame
-from Utils.Constant import Color
+from Game.Utils.Constant import Color
 from Game.Core.Screen.GameScreen import GameScreen
 from Game.Configuration.ConfigurationParser import ConfigurationParser
 from Game.Core.Handler.EventHandler import EventHandler

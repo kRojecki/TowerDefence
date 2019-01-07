@@ -14,5 +14,6 @@ class GameScreen(AbstractScreen):
         self.game_area.init()
 
     def update(self, screen):
-        self.game_area.update(screen)
+        self.game_area.update()
+        self.game_area.draw(screen)
 
