@@ -52,3 +52,5 @@ class GameArea:
 
     def check_events(self):
         pass
+
+    

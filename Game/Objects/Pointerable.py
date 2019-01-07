@@ -9,7 +9,7 @@ class Pointerable(Clickable):
     _size = ()
 
     def __init__(self):
-        MouseHandler.registerObject(self)
+        MouseHandler.register_object(self)
 
     def get_position(self):
         return self._position

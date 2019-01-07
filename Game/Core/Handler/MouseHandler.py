@@ -15,6 +15,6 @@ class MouseHandler:
                     sprite.on_click()
 
     @staticmethod
-    def registerObject(object):
+    def register_object(object):
         if isinstance(object, Game.Objects.Pointerable.Pointerable):
             MouseHandler._pointerable_objects.append(object)
