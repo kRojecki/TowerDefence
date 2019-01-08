@@ -1,88 +1,94 @@
 from Game.Utils.Constant import Position
-from Game.Objects.Tile.EmptyTile import EmptyTile
 from Game.Objects.Tile.TurretTile import TurretTile
-from Game.Core.Handler.GameAreaHandler import GameAreaHandler
+from Game.Core.Event.Handler.GameAreaHandler import GameAreaHandler
 from Game.Core.Calculator.NearestEnemyPositionCalculator import NearestEnemyPositionCalculator
 from pygame import Surface
-from Game.Objects.Enemy.Enemy import Enemy
+from Game.Objects.Enemy.RoundEnemy import RoundEnemy
+from Game.Core.Initializer.DummyGameAreaInitializer import DummyGameAreaInitializer
+from Game.Core.Initializer.Dto.GameAreaInitializerDTO import GameAreaInitializerDTO
+from Game.Core.Collection.EnemyCollection import EnemyCollection
+from Game.Core.Collection.BulletCollection import BulletCollection
 
 
 class GameArea:
 
-    configuration = 0
-    screen = Surface((100, 100))
-    game_area = []
-    _enemy = []
-    start_point = [0,5]
-    field_size = 10
-    game_area_margin = (0, 0) # should be changed because of adding separated surface for gameArea
-    game_area_dimesions = [9, 18]
-
+    # services
+    _configuration = 0
     _nearest_enemy_calculator = 0
 
+    # class attributes
+    _screen = Surface((100, 100))
+    _game_area = []
+    _enemies = EnemyCollection([])
+    _bullets = BulletCollection([])
+    _game_area_margin = (0, 0)  # should be changed because of adding separated surface for gameArea
+
+    # test fields only
+    _game_area_dimension = [9, 18]  # to be removed when file based levels are implemented
+
     def __init__(self, configuration):
-        self.configuration = configuration
-        self.screen = Surface((1000, 600))
+        self._configuration = configuration
         self._nearest_enemy_calculator = NearestEnemyPositionCalculator()
 
     def init(self):
-        self.field_size = self.configuration.getint('GAME', 'field.size')
-        self.init_fields()
-        self.init_enemy()
+        self._init_game_area()
+        self._init_enemy()
+        self._screen = Surface(self._calculate_surface_size())
+
         GameAreaHandler.register_object(self)
 
-    def init_fields(self):
-        row = 0
-        column = 0
-        for areaRow in range(self.game_area_dimesions[Position.X]):
-            new_row = []
-            for field in range(self.game_area_dimesions[Position.Y]):
-                new_row.append(EmptyTile([column, row], self.field_size, self.game_area_margin))
-                row += 1
-            column += 1
-            row = 0
-            self.game_area.append(new_row)
-
-    def init_enemy(self):
-        self._enemy.append(Enemy());
-
     def update(self):
-        for fieldRow in self.game_area:
+        for fieldRow in self._game_area:
             for field in fieldRow:
-                field.update(self._nearest_enemy_calculator.calculate(field, self._enemy))
+                field.update(self._nearest_enemy_calculator.calculate(field, self._enemies))
         pass
 
-        for enemy in self._enemy:
-            enemy.update()
-
-    def change_field(self, position, new_field):
-        self.game_area[position[Position.X]][position[Position.Y]] = new_field
-
-    def draw_fields(self):
-        for fieldRow in self.game_area:
-            for field in fieldRow:
-                if isinstance(field, EmptyTile):
-                    self.draw_single_field(field)
-
-        for fieldRow in self.game_area:
-            for field in fieldRow:
-                if isinstance(field, TurretTile):
-                    self.draw_single_field(field)
-
-    def draw_single_field(self, field):
-        field.draw(self.screen)
-
-    def draw_enemies(self):
-        for enemy in self._enemy:
-            enemy.draw(self.screen)
+        self._enemies.update()
+        self._bullets.update()
 
     def draw(self, main_screen):
-        self.screen.fill((5, 5, 5))
-        self.draw_fields()
-        self.draw_enemies()
+        self._screen.fill((5, 5, 5))
+        self._draw_fields()
+        self._enemies.draw(self._screen)
+        self._bullets.draw(self._screen)
 
-        main_screen.blit(self.screen, self.game_area_margin)
+        main_screen.blit(self._screen, self._game_area_margin)
+
+    def change_field(self, position, new_field):
+        self._game_area[position[Position.X]][position[Position.Y]] = new_field
 
     def get_game_area(self):
-        return self.game_area
+        return self._game_area
+
+    def _init_enemy(self):
+        self._enemies.append(RoundEnemy())
+
+    def _init_game_area(self):
+        field_size = self._configuration.getint('GAME', 'field.size')
+        dto = GameAreaInitializerDTO(self._game_area, field_size, self._game_area_dimension)
+
+        game_initializer = DummyGameAreaInitializer()
+        self._game_area = game_initializer.init_game_area(dto)
+
+    def _draw_fields(self):
+        for fieldRow in self._game_area:
+            for field in fieldRow:
+                if not isinstance(field, TurretTile):
+                    self._draw_single_field(field)
+
+        for fieldRow in self._game_area:
+            for field in fieldRow:
+                if isinstance(field, TurretTile):
+                    self._draw_single_field(field)
+
+    def _draw_single_field(self, field):
+        field.draw(self._screen)
+
+    def _calculate_surface_size(self):
+        field_size = self._configuration.getint('GAME', 'field.size')
+        return (
+            len(self._game_area[0]) * field_size,
+            len(self._game_area) * field_size
+        )
+
 

@@ -4,4 +4,4 @@ class NearestEnemyPositionCalculator:
     def calculate(self, tile, enemies):
         tile_pos = tile.get_position()
 
-        return enemies[0]
+        return enemies.get(0)

@@ -11,7 +11,7 @@ class GameAreaHandler:
         if event.type == EventEnum.TILE_CLICKED:
             GameAreaHandler._game_arena.change_field(
                 event.tile.get_tile_position(),
-                TileFactory.createTileFromTile(event.tile, 'TurretTile')
+                TileFactory.create_tile_from_tile(event.tile, 'TurretTile')
             )
         if event.type == EventEnum.FIRE:
             pass
