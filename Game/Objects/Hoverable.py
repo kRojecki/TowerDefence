@@ -1,5 +1,5 @@
 import pygame
-from Utils.Constant import Position
+from Game.Utils.Constant import Position
 
 
 class Hoverable:
@@ -19,6 +19,12 @@ class Hoverable:
     def on_hover(self):
         if self._is_hover():
             return self._hover_action()
+        else:
+            return self._lost_focus_action()
+
 
     def _hover_action(self):
+        pass
+
+    def _lost_focus_action(self):
         pass
