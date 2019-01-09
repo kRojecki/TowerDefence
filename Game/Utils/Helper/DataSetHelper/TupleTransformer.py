@@ -2,12 +2,8 @@ class TupleTransformer:
 
     @staticmethod
     def mutiplyTuple(data, mutiplier):
-        for element, key in data:
-            data[key] = element * mutiplier;
-        return data
+        return [s * mutiplier for s in data]
 
     @staticmethod
     def addToTuple(data, adding_value):
-        for element, key in data:
-            data[key] = element + adding_value;
-        return data
+        return [s + adding_value for s in data]

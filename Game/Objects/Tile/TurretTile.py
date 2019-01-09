@@ -6,6 +6,8 @@ from Game.Core.Calculator.Tile.TileRotationCalculator import TileRotationCalcula
 from Game.Core.Calculator.Tile.TileDistanceCalculator import TileDistanceCalculator
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 
+import math
+
 
 from Game.Utils.Helper.TransformHelper.RotationHelper import RotationHelper
 
@@ -18,10 +20,12 @@ class TurretTile(Tile):
         PointableState.CLICKED: Color.WHITE
     }
 
+    _turret_barrel_position = ()
+
     _rotation = -90
     _range = 250
     _bullet = 0
-    _fire_rate = 1
+    _fire_rate = 5
 
     _fire_rate_clock = 0
 
@@ -33,10 +37,14 @@ class TurretTile(Tile):
         pygame.draw.rect(screen, self._border_color, second_border_rect, 1)
         pygame.draw.circle(screen, Color.GRAY, self.get_center(), self._range, 1)
 
-    def update(self, nearest_enemy):
+    def update(self, nearest_enemy=None):
+
+        if nearest_enemy is None or nearest_enemy.get_state() == nearest_enemy.KILLED:
+            return
 
         if self._range > TileDistanceCalculator.calculate_distance(self, nearest_enemy):
             self._rotation = TileRotationCalculator.calculate_rotation(self, nearest_enemy)
+            self._turret_barrel_position = TileRotationCalculator.calculate_barrel_position(self, self._rotation)
 
             if self._fire_rate_clock == 0:
                 self._fire_to(nearest_enemy)
@@ -84,6 +92,6 @@ class TurretTile(Tile):
             {
                 "turret": self,
                 "enemy": nearest_enemy,
-                "start_position": ((self._size[Position.X] / 2), self._size[Position.Y] / 10),
+                "start_position": self._turret_barrel_position,
             }
         )
