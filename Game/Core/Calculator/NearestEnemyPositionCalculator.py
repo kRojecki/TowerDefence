@@ -1,7 +1,13 @@
-
 class NearestEnemyPositionCalculator:
 
-    def calculate(self, tile, enemies):
-        tile_pos = tile.get_position()
+    _enemies = None
 
-        return enemies.get(0)
+    def __init__(self, enemies):
+        self._enemies = enemies
+
+    def calculate(self, tile):
+
+        if len(self._enemies) == 0:
+            return None
+
+        return self._enemies.get(0)

@@ -1,5 +1,4 @@
-from Game.Objects.Tile.TurretTile import TurretTile
-from Game.Objects.Tile.EmptyTile import EmptyTile
+from Game.Utils.Helper.ClassProvider import ClassProvider
 
 
 class TileFactory:
@@ -10,7 +9,5 @@ class TileFactory:
 
     @staticmethod
     def create_tile_from_args(position, size, tile_type):
-        if tile_type == 'TurretTile':
-            return TurretTile(position, size)
-        else:
-            return EmptyTile(position, size)
+            return ClassProvider.provide_class(tile_type)(position, size)
+

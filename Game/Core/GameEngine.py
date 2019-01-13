@@ -8,14 +8,15 @@ from Game.Core.Event.Handler.EventHandler import EventHandler
 
 class GameEngine:
 
+    FIXED_FPS = 60
+
     _width, _height = 1024, 768
     _clock = 0
     _main_surface = 0
     _current_screen = 0
 
-    config = 0
-
-    _event_handler = 0
+    config = None
+    _event_handler = None
 
     def init(self):
         self.config = ConfigurationParser.load_configuration()
@@ -40,7 +41,7 @@ class GameEngine:
     def loop(self):
         while True:
             # set clock to fixed 60 fps
-            self._clock.tick(60)
+            self._clock.tick(self.FIXED_FPS)
 
             # handle system events like closing aplication
             self.handle_events()

@@ -8,8 +8,8 @@ class Centerable:
 
     def get_position(self):
         return (
-            int(self._position[0]),
-            int(self._position[1])
+            int(self._position[Position.X]),
+            int(self._position[Position.Y])
         )
 
     def get_size(self):
