@@ -10,15 +10,20 @@ from Game.Core.Event.Handler.BulletHandler import BulletHandler
 class EventHandler:
 
     _handlers = {
-        pygame.MOUSEBUTTONDOWN: MouseHandler,
-        pygame.MOUSEBUTTONUP:   MouseHandler,
-        pygame.MOUSEMOTION:     MouseHandler,
-        pygame.QUIT:            SystemHandler,
+        pygame.QUIT: SystemHandler,
 
-        EventEnum.TILE_CLICKED: GameAreaHandler,
-        EventEnum.FIRE:         BulletHandler,
-        EventEnum.ENEMY_HIT:    BulletHandler,
-        EventEnum.ENEMY_KILLED: EnemyHandler,
+        pygame.MOUSEBUTTONDOWN:         MouseHandler,
+        pygame.MOUSEBUTTONUP:           MouseHandler,
+        pygame.MOUSEMOTION:             MouseHandler,
+
+        EventEnum.TILE_CLICKED:         GameAreaHandler,
+
+        EventEnum.FIRE:                 BulletHandler,
+        EventEnum.ENEMY_HIT:            BulletHandler,
+
+        EventEnum.ENEMY_KILLED:         EnemyHandler,
+        EventEnum.NEW_ENEMY_WAVE:        EnemyHandler,
+        EventEnum.ENEMY_COMPLETED_PATH: EnemyHandler,
     }
 
     def handle(self):

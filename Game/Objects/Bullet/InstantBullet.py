@@ -6,9 +6,11 @@ from Game.Utils.Constant import EventEnum
 
 class InstantBullet(Bullet):
 
+    _size = 1
+
     def draw(self, screen):
         if self._state == self.NEW:
-            pygame.draw.line(screen, (255, 255, 255), self.get_position(), self._target.get_center(), 1)
+            pygame.draw.line(screen, (255, 255, 255), self.get_position(), self._target.get_center(), self._size)
             self._state = self.MOVING
 
     def update(self):
