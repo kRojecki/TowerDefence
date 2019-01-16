@@ -1,7 +1,8 @@
 import sys
 import pygame
+
+from Core.Screen.ScreenResolver import ScreenResolver
 from Game.Utils.Constant import Color
-from Game.Core.Screen.GameScreen import GameScreen
 from Game.Configuration.ConfigurationParser import ConfigurationParser
 from Game.Core.Event.Handler.EventHandler import EventHandler
 
@@ -32,7 +33,7 @@ class GameEngine:
         self._main_surface = pygame.display.set_mode(size)
         self._clock = pygame.time.Clock()
 
-        self._current_screen = GameScreen(self.config)
+        self._current_screen = ScreenResolver.create_screen(ScreenResolver.GAME_SCREEN, self.config)
         self._current_screen.init()
 
     def run(self):
