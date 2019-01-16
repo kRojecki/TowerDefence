@@ -17,29 +17,21 @@ class EnemyStartingPointPath(EnemyPath):
                     {
                         "start_position_range": (
                             [
-                                self.get_position()[Position.X] - self.get_size()[Position.X] + 8,
-                                self.get_position()[Position.X] - 8,
+                                (self.get_position()[Position.X] - self.get_size()[Position.X])*4,
+                                self.get_position()[Position.X],
                             ],
                             [
-                                self.get_position()[Position.Y] + 8,
-                                self.get_position()[Position.Y] + self.get_size()[Position.Y] - 8
+                                self.get_position()[Position.Y] + int(self.get_size()[Position.Y]/2) - 5,
+                                self.get_position()[Position.Y] + int(self.get_size()[Position.Y]/2) + 5
                             ]
                         ),
                         "enemy_types": [
                             EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
+                            EnemyEnum.TRIANGLE_ENEMY,
                             EnemyEnum.SQUARE_ENEMY,
                             EnemyEnum.ROUND_ENEMY,
                             EnemyEnum.SQUARE_ENEMY,
-                            EnemyEnum.ROUND_ENEMY,
+                            EnemyEnum.TRIANGLE_ENEMY,
                             EnemyEnum.SQUARE_ENEMY,
                             EnemyEnum.ROUND_ENEMY,
                         ],
