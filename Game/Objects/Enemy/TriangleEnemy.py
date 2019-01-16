@@ -8,7 +8,7 @@ class TriangleEnemy(Enemy):
 
     _size = (15, 15)
     _speed = 1
-    _health = 75
+    _max_health = 75
 
     def draw(self, screen):
         super().draw(screen)
