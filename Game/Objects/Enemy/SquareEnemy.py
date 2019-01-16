@@ -5,15 +5,26 @@ from Utils.Constant import Color, Position
 
 class SquareEnemy(Enemy):
 
-    _size = (10, 10)
+    _size = (15, 15)
     _speed = 0.15
     _health = 200
+    _rotation = 0
+
+    _rotated = False
 
     def draw(self, screen):
+
+        super().draw(screen)
         rect = pygame.Rect(
-            self.get_position()[Position.X],
-            self.get_position()[Position.Y],
-            self.get_size()[Position.X],
-            self.get_size()[Position.Y],
+            0,
+            0,
+            self.get_size()[Position.X] - int(self._border_width/2),
+            self.get_size()[Position.Y] - int(self._border_width/2),
         )
-        pygame.draw.rect(screen, Color.RED, rect, 2)
+        pygame.draw.rect(self._surface, Color.RED, rect, self._border_width)
+        self.blit(screen)
+
+    def update(self):
+        super().update()
+        if self._rotated:
+            self._rotation = (self._rotation + 1 % 90)

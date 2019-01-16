@@ -1,5 +1,5 @@
-from Game.Objects.Clickable import Clickable
-from Game.Core.Event.Handler.MouseHandler import MouseHandler
+import Game.Core.Event.Handler.MouseHandler
+from Objects.Interfaces.Clickable import Clickable
 from Game.Utils.Constant import PointableState
 
 
@@ -11,7 +11,7 @@ class Pointerable(Clickable):
     _state = PointableState.CLEAR
 
     def __init__(self):
-        MouseHandler.register_object(self)
+        Game.Core.Event.Handler.MouseHandler.MouseHandler.register_object(self)
 
     def get_position(self):
         return self._position

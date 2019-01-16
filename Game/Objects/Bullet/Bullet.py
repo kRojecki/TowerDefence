@@ -1,4 +1,4 @@
-from Game.Objects.Drawable import Drawable
+from Objects.Interfaces.Drawable import Drawable
 
 
 class Bullet(Drawable):

@@ -22,7 +22,7 @@ class EventHandler:
         EventEnum.ENEMY_HIT:            BulletHandler,
 
         EventEnum.ENEMY_KILLED:         EnemyHandler,
-        EventEnum.NEW_ENEMY_WAVE:        EnemyHandler,
+        EventEnum.NEW_ENEMY_WAVE:       EnemyHandler,
         EventEnum.ENEMY_COMPLETED_PATH: EnemyHandler,
     }
 

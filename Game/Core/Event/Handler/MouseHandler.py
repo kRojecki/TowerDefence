@@ -1,5 +1,5 @@
 import pygame
-import Game.Objects.Pointerable
+import Objects.Interfaces.Pointerable
 
 
 class MouseHandler:
@@ -16,5 +16,5 @@ class MouseHandler:
 
     @staticmethod
     def register_object(object):
-        if isinstance(object, Game.Objects.Pointerable.Pointerable):
+        if isinstance(object, Objects.Interfaces.Pointerable.Pointerable):
             MouseHandler._pointerable_objects.append(object)

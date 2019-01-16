@@ -7,4 +7,7 @@ from Utils.Constant import Color
 class RoundEnemy(Enemy):
 
     def draw(self, screen):
-            pygame.draw.circle(screen, Color.RED, self.get_position(), self._size[0], 2)
+        super().draw(screen)
+        center = int(self._size[0]/2)
+        pygame.draw.circle(self._surface, Color.RED, (center, center), center, self._border_width)
+        self.blit(screen)

@@ -1,5 +1,5 @@
 import pygame
-from Game.Objects.Hoverable import Hoverable
+from Objects.Interfaces.Hoverable import Hoverable
 
 
 class Clickable(Hoverable):
