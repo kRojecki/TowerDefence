@@ -2,11 +2,12 @@ import pygame
 from Game.Utils.Constant import Color, Position, PointableState, EventEnum
 from Game.Objects.Pointerable import Pointerable
 from Game.Objects.Drawable import Drawable
+from Game.Objects.Changeable import Changeable
 from Game.Core.Calculator.Tile.TilePositionCalculator import TilePositionCalculator
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 
 
-class Tile(Pointerable, Drawable):
+class Tile(Pointerable, Drawable, Changeable):
 
     _border_color = Color.GRAY
 
@@ -32,7 +33,11 @@ class Tile(Pointerable, Drawable):
         pass
 
     def get_tile_position(self):
-        return self._tile_position
+        return (
+            self._tile_position[Position.Y],
+            self._tile_position[Position.X]
+        )
+        # change coordinates because of array
 
     def get_size(self):
         return self._size

@@ -7,7 +7,7 @@ class BulletFactory:
 
     @staticmethod
     def create_bullet_from_event(event):
-        return BulletFactory.create_bullet_from_args(event.start_position, event.enemy)
+        return BulletFactory.create_bullet_from_args(event.start_position, event.enemy, event.bullet_type)
 
     @staticmethod
     def create_bullet_from_args(position, target, bullet_type=DEFAULT_BULLET):

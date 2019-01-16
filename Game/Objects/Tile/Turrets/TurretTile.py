@@ -3,31 +3,34 @@ import pygame
 from Game.Utils.Constant import Color, Position, PointableState, EventEnum
 from pygame import Surface
 from Game.Core.Calculator.Tile.TileRotationCalculator import TileRotationCalculator
-from Game.Core.Calculator.Tile.TileDistanceCalculator import TileDistanceCalculator
+from Core.Calculator.CenterDistanceCalculator import CenterDistanceCalculator
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
-
-import math
+from Game.Objects.Bullet.Enum.BulletEnum import BulletEnum
 
 
 from Game.Utils.Helper.TransformHelper.RotationHelper import RotationHelper
 
 
 class TurretTile(Tile):
-    _border_color = (200, 90, 90)
+    _border_color = Color.T_TURRET_TILE_BORDER
     _background_color = {
-        PointableState.CLEAR: (100, 10, 10),
-        PointableState.HOVER: Color.GRAY,
-        PointableState.CLICKED: Color.WHITE
+        PointableState.CLEAR: Color.T_TURRET_TILE_BACKGROUND_CLEAR,
+        PointableState.HOVER: Color.T_TURRET_TILE_BACKGROUND_HOVER,
+        PointableState.CLICKED: Color.T_TURRET_TILE_BACKGROUND_CLICKED
     }
+    _cannon_color = Color.DARK_GRAY;
+    _range_border_color = Color.LIGHT_GRAY
 
     _turret_barrel_position = ()
 
     _rotation = -90
-    _range = 250
+    _range = 75
     _bullet = 0
     _fire_rate = 5
 
     _fire_rate_clock = 0
+
+    _bullet_type = BulletEnum.INSTANT_BULLET
 
     def _draw_border(self, screen):
         super()._draw_border(screen)
@@ -35,14 +38,13 @@ class TurretTile(Tile):
                               self._size[Position.X] - 3, self._size[Position.Y] - 3)
 
         pygame.draw.rect(screen, self._border_color, second_border_rect, 1)
-        pygame.draw.circle(screen, Color.GRAY, self.get_center(), self._range, 1)
 
     def update(self, nearest_enemy=None):
 
         if nearest_enemy is None or nearest_enemy.get_state() == nearest_enemy.KILLED:
             return
 
-        if self._range > TileDistanceCalculator.calculate_distance(self, nearest_enemy):
+        if self._range > CenterDistanceCalculator.calculate_distance(self, nearest_enemy):
             self._rotation = TileRotationCalculator.calculate_rotation(self, nearest_enemy)
             self._turret_barrel_position = TileRotationCalculator.calculate_barrel_position(self, self._rotation)
 
@@ -70,19 +72,12 @@ class TurretTile(Tile):
         ]
         pygame.draw.polygon(
             cannon,
-            self._border_color,
+            self._cannon_color,
             cannon_points,
             0
         )
 
-        # temporary to show circle fire area
-        pygame.draw.circle(
-            cannon,
-            self._border_color,
-            (int(self._size[Position.X] / 2), int(self._size[Position.Y] / 10)),
-            3,
-            1
-        )
+        #self._draw_range_circle(cannon)
 
         return cannon
 
@@ -93,5 +88,16 @@ class TurretTile(Tile):
                 "turret": self,
                 "enemy": nearest_enemy,
                 "start_position": self._turret_barrel_position,
+                "bullet_type": self._bullet_type
             }
+        )
+
+    def _draw_range_circle(self, cannon):
+        # temporary to show circle fire area
+        pygame.draw.circle(
+            cannon,
+            self._border_color,
+            (int(self._size[Position.X] / 2), int(self._size[Position.Y] / 10)),
+            3,
+            1
         )

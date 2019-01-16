@@ -1,9 +1,12 @@
+import copy
+
+
 class Collection:
 
-    _elements = []
+    _elements = None
 
-    def __init__(self, list=[]):
-        self._elements = list
+    def __init__(self, elements=[]):
+        self._elements = copy.deepcopy(elements)
 
     def append(self, element):
         self._elements.append(element)
@@ -24,3 +27,10 @@ class Collection:
 
     def __len__(self):
         return len(self._elements)
+
+    def get_elements(self):
+        for element in self._elements:
+            yield element
+
+
+
