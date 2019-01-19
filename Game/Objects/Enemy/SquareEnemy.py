@@ -7,7 +7,7 @@ class SquareEnemy(Enemy):
 
     _size = (15, 15)
     _speed = 0.15
-    _health = 200
+    _max_health = 200
     _rotation = 0
 
     _rotated = False

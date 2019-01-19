@@ -1,17 +1,15 @@
 import pygame
 
 from Objects.Interfaces.Drawable import Drawable
-from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
+from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Game.Utils.Constant import EventEnum, Color
+from Objects.Interfaces.Healthable import Healthable
 from Objects.Interfaces.Pathable import Pathable
 from Utils.Constant import Position
 import random
 
 
-class Enemy(Drawable, Pathable):
-
-    ALIVE = 0
-    KILLED = 1
+class Enemy(Drawable, Pathable, Healthable):
 
     _position = (60, 60)
     _size = (10, 10)
@@ -21,14 +19,12 @@ class Enemy(Drawable, Pathable):
 
     _overscreen_margin = 10
 
-    _health = 100
     _speed = 0.25
 
-    _rotation = 0
-
-    _state = ALIVE
+    _max_health = 100
 
     def __init__(self, start_position, path):
+        super().__init__()
         self._position = start_position
         self._path = path
         self._overscreen_margin = random.randrange(-30, -10)
@@ -36,6 +32,7 @@ class Enemy(Drawable, Pathable):
 
     def draw(self, screen):
         self._surface.fill(Color.CLEAR)
+        screen.blit(self._draw_health_bar(self._size[0]), self._get_health_bar_position())
         if self._state != self.ALIVE:
             return
 
@@ -48,25 +45,23 @@ class Enemy(Drawable, Pathable):
                 self._position[Position.Y] + (self._move_vector[Position.Y] * self._speed)
             )
 
-    def hit(self, damage):
-        self._health = self._health - damage
-        if self._health <= 0:
-            self._death()
+    def _set_move_vector(self):
+        out_of_margin = self.get_position()[Position.X] < self._overscreen_margin \
+                        or self.get_position()[Position.Y] < self._overscreen_margin
+
+        self._move_vector = self._get_move_vector(out_of_margin)
+
+    def _get_health_bar_position(self):
+        return (
+            self.get_position()[Position.X],
+            self.get_position()[Position.Y] - 5
+        )
 
     def _death(self):
+        super()._death()
         EventDispatcher.dispatch(
             EventEnum.ENEMY_KILLED,
             {
                 'enemy': self,
             }
         )
-        self._state = self.KILLED
-
-    def get_state(self):
-        return self._state
-
-    def _set_move_vector(self):
-        out_of_margin = self.get_position()[Position.X] < self._overscreen_margin \
-                        or self.get_position()[Position.Y] < self._overscreen_margin
-
-        self._move_vector = self._get_move_vector(out_of_margin)

@@ -1,52 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44e1ef21-0af6-4ddb-91b3-e795e96bd0e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Game/Core/Calculator/CenterDistanceCalculator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Core/Factory/EnemyFactory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Core/Path/Path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Core/Path/PathResolver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Core/Path/PathStep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Bullet/Enum/BulletEnum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Bullet/RocketInstantBullet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Changeable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Enemy/Enum/EnemyEnum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Pathable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyEndPointPath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyPath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game/Objects/Tile/Turrets/RocketTurretTile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/katd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/katd.iml" afterDir="false" />
+    <list default="true" id="44e1ef21-0af6-4ddb-91b3-e795e96bd0e0" name="Default Changelist" comment="Add screen resolver">
+      <change afterPath="$PROJECT_DIR$/Game/Objects/Interfaces/Healthable.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Calculator/NearestEnemyPositionCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Calculator/NearestEnemyPositionCalculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Calculator/Tile/TileDistanceCalculator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Calculator/Tile/TilePositionCalculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Calculator/Tile/TilePositionCalculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Collection/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Collection/Collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Event/Handler/EnemyHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Event/Handler/EnemyHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Event/Handler/EventHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Event/Handler/EventHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Event/Handler/GameAreaHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Event/Handler/GameAreaHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Factory/BulletFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Factory/BulletFactory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Factory/TileFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Factory/TileFactory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/GameArea.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/GameArea.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Core/Initializer/FileBasedLevelGameAreaInitializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Core/Initializer/FileBasedLevelGameAreaInitializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Bullet/InstantBullet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Bullet/InstantBullet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Centerable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Centerable.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Enemy/RoundEnemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Enemy/RoundEnemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile/EmptyTile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Tile/EmptyTile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile/EnemyPath.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile/Enum/TileEnum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Tile/Enum/TileEnum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile/Tile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Tile/Tile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile/TurretTile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Tile/Turrets/TurretTile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game/Utils/Constant/Color.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Utils/Constant/Color.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Utils/Constant/EventEnum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Utils/Constant/EventEnum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/Utils/Helper/DataSetHelper/TupleTransformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Utils/Helper/DataSetHelper/TupleTransformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/TileMap/Default.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/TileMap/Default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/levels/level1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/levels/level1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
     </list>
+    <list id="659b4b98-37bd-4351-9cb3-d06966c1a43a" name="another" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +22,95 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+            <state>
+              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-210">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding>
+                <element signature="e#1#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Drawable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Healthable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Utils/Constant/Color.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Pointerable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/RoundEnemy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Pathable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -67,97 +118,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="120">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Core/Path/PathResolver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Core/Path/PathStep.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Core/Path/Path.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Core/GameArea.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Objects/Pathable.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Game/Core/Event/Handler/EnemyHandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Game/Core/Factory/EnemyFactory.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,13 +147,15 @@
       <find>3</find>
       <find>bullet</find>
       <find>print</find>
+      <find>surface</find>
+      <find>2</find>
     </findStrings>
     <replaceStrings>
-      <replace>0</replace>
       <replace>50</replace>
       <replace>51</replace>
       <replace>[Position.Y]</replace>
       <replace>2</replace>
+      <replace>0</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -198,20 +164,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/StartingPointPath.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/EnemyStartingPointPath.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/EnemyEndPointPath.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/EmptyTile.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/TurretTile.py" />
-        <option value="$PROJECT_DIR$/Game/Utils/Constant/Color.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Changeable.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/EnemyPath.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/Enum/TileEnum.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Bullet/InstantBullet.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Bullet/Enum/BulletEnum.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Bullet/RocketInstantBullet.py" />
-        <option value="$PROJECT_DIR$/Game/Utils/Constant/EventEnum.py" />
-        <option value="$PROJECT_DIR$/Game/Core/Event/Handler/EventHandler.py" />
         <option value="$PROJECT_DIR$/Game/Utils/Helper/ClassProvider.py" />
         <option value="$PROJECT_DIR$/Game/Core/Calculator/Tile/CenterDistanceCalculator.py" />
         <option value="$PROJECT_DIR$/Game/Core/Factory/BulletFactory.py" />
@@ -220,12 +174,10 @@
         <option value="$PROJECT_DIR$/Game/Core/Collection/BulletCollection.py" />
         <option value="$PROJECT_DIR$/Game/Core/Collection/EnemyCollection.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Centerable.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py" />
         <option value="$PROJECT_DIR$/Game/Core/Collection/Collection.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Enemy/Enum/EnemyEnum.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Tile/Turrets/RocketTurretTile.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Tile/Turrets/TurretTile.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py" />
         <option value="$PROJECT_DIR$/Game/Core/Calculator/Enemy/PathCalculator.py" />
         <option value="$PROJECT_DIR$/Game/Core/Calculator/Enemy/Dto/CalculatedPathDto.py" />
         <option value="$PROJECT_DIR$/Game/Core/Path/PathCalculator.py" />
@@ -236,19 +188,33 @@
         <option value="$PROJECT_DIR$/Game/Core/Factory/TileFactory.py" />
         <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/Resources/TileMap/Default.py" />
-        <option value="$PROJECT_DIR$/Resources/levels/level1.dat" />
         <option value="$PROJECT_DIR$/Game/Core/Factory/EnemyFactory.py" />
-        <option value="$PROJECT_DIR$/Game/Core/GameArea.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Pathable.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py" />
         <option value="$PROJECT_DIR$/Game/Core/Event/Handler/EnemyHandler.py" />
         <option value="$PROJECT_DIR$/Game/Core/Calculator/CenterDistanceCalculator.py" />
         <option value="$PROJECT_DIR$/Game/Core/Event/Handler/GameAreaHandler.py" />
         <option value="$PROJECT_DIR$/Game/Core/Path/Path.py" />
-        <option value="$PROJECT_DIR$/Game/Core/Path/PathResolver.py" />
         <option value="$PROJECT_DIR$/Game/Core/Path/PathStep.py" />
-        <option value="$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py" />
+        <option value="$PROJECT_DIR$/Game/Core/Path/PathResolver.py" />
+        <option value="$PROJECT_DIR$/Game/Utils/Constant/EventEnum.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Pathable.py" />
+        <option value="$PROJECT_DIR$/Game/Core/Screen/ScreenResolver.py" />
+        <option value="$PROJECT_DIR$/Game/Core/Screen/AbstractScreen.py" />
+        <option value="$PROJECT_DIR$/Game/Core/Screen/MenuScreen.py" />
         <option value="$PROJECT_DIR$/Game/Objects/Enemy/RoundEnemy.py" />
+        <option value="$PROJECT_DIR$/Game/Utils/Helper/TransformHelper/RotationHelper.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Drawable.py" />
+        <option value="$PROJECT_DIR$/Resources/levels/level1.dat" />
+        <option value="$PROJECT_DIR$/Resources/levels/level2.dat" />
+        <option value="$PROJECT_DIR$/Game/Core/GameArea.py" />
+        <option value="$PROJECT_DIR$/Game/Core/GameEngine.py" />
+        <option value="$PROJECT_DIR$/Game/Core/Event/Handler/EventHandler.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Pointerable.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py" />
+        <option value="$PROJECT_DIR$/Game/Utils/Constant/Color.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Interfaces/Healthable.py" />
+        <option value="$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py" />
       </list>
     </option>
   </component>
@@ -380,6 +346,13 @@
               <item name="katd" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
               <item name="Objects" type="462c0819:PsiDirectoryNode" />
+              <item name="Interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="katd" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="462c0819:PsiDirectoryNode" />
               <item name="Tile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -409,6 +382,13 @@
               <item name="katd" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="katd" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
               <item name="Helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -418,6 +398,14 @@
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
               <item name="Helper" type="462c0819:PsiDirectoryNode" />
               <item name="DataSetHelper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="katd" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Helper" type="462c0819:PsiDirectoryNode" />
+              <item name="TransformHelper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="katd" type="b2602c69:ProjectViewProjectNode" />
@@ -436,6 +424,28 @@
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="TileMap" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-1247971763" type="70582d5e:PySkeletonsNode" />
+            </path>
+            <path>
+              <item name="katd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-1247971763" type="70582d5e:PySkeletonsNode" />
+              <item name="pygame" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -450,19 +460,19 @@
     <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Game/Objects/Enemy" />
-      <recent name="$PROJECT_DIR$/Game/Core/Factory" />
-      <recent name="$PROJECT_DIR$/Game/Objects/Bullet" />
-      <recent name="$PROJECT_DIR$/Game/Objects/Tile/Turrets" />
-      <recent name="$PROJECT_DIR$/Game/Objects/Tile" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Game/Objects/Interfaces" />
       <recent name="$PROJECT_DIR$/Game/Core/Path" />
       <recent name="$PROJECT_DIR$/Game/Core/Calculator" />
       <recent name="$PROJECT_DIR$/Game/Objects/Tile/Turrets" />
       <recent name="$PROJECT_DIR$/Game/Objects/Tile/Path" />
-      <recent name="$PROJECT_DIR$/Game/Objects/Tile/Enum" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Resources/levels" />
+      <recent name="$PROJECT_DIR$/Game/Objects/Enemy" />
+      <recent name="$PROJECT_DIR$/Game/Core/Factory" />
+      <recent name="$PROJECT_DIR$/Game/Objects/Bullet" />
+      <recent name="$PROJECT_DIR$/Game/Objects/Tile/Turrets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -533,19 +543,58 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="44e1ef21-0af6-4ddb-91b3-e795e96bd0e0" name="Default Changelist" comment="" />
+      <changelist id="659b4b98-37bd-4351-9cb3-d06966c1a43a" name="another" comment="" />
       <created>1546182493576</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546182493576</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add screen resolver">
+      <created>1547675172601</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547675172601</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add screen resolver">
+      <created>1547675238066</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547675238066</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Change start position of enemies">
+      <created>1547675282253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547675282253</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Blank color">
+      <created>1547675356602</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547675356602</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Move interface/abstracts and handle enemy rotation when change direction">
+      <created>1547675855509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547675855509</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18831168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32852387" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30965593" />
@@ -581,6 +630,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24986301" />
     </layout-to-restore>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add screen resolver" />
+    <MESSAGE value="Change start position of enemies" />
+    <MESSAGE value="Blank color" />
+    <MESSAGE value="Move interface/abstracts and handle enemy rotation when change direction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move interface/abstracts and handle enemy rotation when change direction" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <default-breakpoints>
@@ -593,123 +649,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Game/Core/GameEngine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1247971763/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26399">
-          <caret line="3692" column="11" lean-forward="true" selection-start-line="3692" selection-start-column="11" selection-end-line="3692" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/copy.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/numpy/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/numpy/core/multiarray.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1665" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/collections/abc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/collections/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Drawable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Calculator/CenterDistanceCalculator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Event/Handler/EventHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Calculator/NearestEnemyPositionCalculator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Collection/BulletCollection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Collection/EnemyCollection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Event/Handler/BulletHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Factory/BulletFactory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="78" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Centerable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Game/Objects/Bullet/RocketInstantBullet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -758,24 +697,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Calculator/Enemy/Dto/CalculatedPathDto.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Calculator/Enemy/Dto/CalculatedPathDto.py" />
     <entry file="file://$PROJECT_DIR$/Game/Utils/Helper/ClassProvider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -831,37 +757,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Turrets/TurretTile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/TileMap/Default.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/levels/level1.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Turrets/RocketTurretTile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,62 +784,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Game/Core/Initializer/FileBasedLevelGameAreaInitializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/RoundEnemy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="9" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Factory/EnemyFactory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/Path/PathResolver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -952,44 +801,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Core/GameArea.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Game/Core/Path/Path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="225">
           <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py">
+    <entry file="file://$PROJECT_DIR$/Game/Core/Factory/EnemyFactory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="75">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Game/Objects/Pathable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -999,6 +824,231 @@
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Path/PathResolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Screen/GameScreen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Utils/Constant/EventEnum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Screen/AbstractScreen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Screen/MenuScreen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Turrets/RocketTurretTile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Centerable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Turrets/TurretTile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="63" column="71" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="63" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1247971763/pygame/transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Utils/Helper/TransformHelper/RotationHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/levels/level1.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/levels/level2.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Screen/ScreenResolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/GameArea.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/GameEngine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Event/Handler/MouseHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Core/Event/Handler/EventHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Pointerable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/RoundEnemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/SquareEnemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/TriangleEnemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Utils/Constant/Color.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Tile/Path/EnemyStartingPointPath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Healthable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Drawable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Interfaces/Pathable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/Objects/Enemy/Enemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#1#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
