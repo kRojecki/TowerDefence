@@ -44,7 +44,7 @@ class TurretTile(Tile):
         if nearest_enemy is None or nearest_enemy.get_state() == nearest_enemy.KILLED:
             return
 
-        if self._range > CenterDistanceCalculator.calculate_distance(self, nearest_enemy):
+        if self._range > CenterDistanceCalculator.calculate_distance(self.get_center(), nearest_enemy.get_center()):
             self._rotation = TileRotationCalculator.calculate_rotation(self, nearest_enemy)
             self._turret_barrel_position = TileRotationCalculator.calculate_barrel_position(self, self._rotation)
 

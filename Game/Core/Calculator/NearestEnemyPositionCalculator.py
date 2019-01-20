@@ -24,10 +24,10 @@ class NearestEnemyPositionCalculator:
 
             if nearest is None:
                 nearest = enemy
-                nearest_distance = CenterDistanceCalculator.calculate_distance(tile, enemy)
+                nearest_distance = CenterDistanceCalculator.calculate_distance(tile.get_center(), enemy.get_center())
                 continue
 
-            new_distance = CenterDistanceCalculator.calculate_distance(tile, enemy)
+            new_distance = CenterDistanceCalculator.calculate_distance(tile.get_center(), enemy.get_center())
             if new_distance < nearest_distance:
                 nearest = enemy
                 nearest_distance = new_distance

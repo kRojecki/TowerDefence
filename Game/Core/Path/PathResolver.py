@@ -1,3 +1,4 @@
+from Configuration.Configuration import Configuration
 from Core.Path.Path import Path
 from Core.Path.PathStep import PathStep
 from Game.Objects.Tile.Path.EnemyStartingPointPath import EnemyStartingPointPath
@@ -48,13 +49,9 @@ class PathResolver:
         neighborhood = []
 
         for position in self._NEIGHBORHOOD_POSITIONS:
-
             neighborhood_position = TupleTransformer.add_tuples(tile_position, position)
 
-            if neighborhood_position[Position.X] < 0 \
-                    or neighborhood_position[Position.Y] < 0 \
-                    or neighborhood_position[Position.X] > len(self._game_area[0]) \
-                    or neighborhood_position[Position.Y] > len(self._game_area):
+            if self._is_neighbor_on_screen(neighborhood_position):
                 continue
 
             neighborhood.append(
@@ -62,6 +59,12 @@ class PathResolver:
             )
 
         return neighborhood
+
+    def _is_neighbor_on_screen(self, neighborhood_position):
+        return neighborhood_position[Position.X] < 0 \
+            or neighborhood_position[Position.Y] < 0 \
+            or neighborhood_position[Position.X] > len(self._game_area[0]) \
+            or neighborhood_position[Position.Y] > len(self._game_area)
 
     def _build_path(self, tile):
 
@@ -79,7 +82,7 @@ class PathResolver:
 
     def _create_path_step(self, tile):
 
-        length = 40
+        length = Configuration.get_int('GAME', 'field.size')
 
         if isinstance(tile, EnemyEndPointPath):
             length *= 2

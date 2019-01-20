@@ -1,4 +1,4 @@
-from Core.Factory.EnemyFactory import EnemyFactory
+from Configuration.Configuration import Configuration
 from Game.Utils.Constant import Position
 from Game.Objects.Tile.Turrets.TurretTile import TurretTile
 from Game.Core.Event.Handler.GameAreaHandler import GameAreaHandler
@@ -10,6 +10,8 @@ from Game.Core.Initializer.FileBasedLevelGameAreaInitializer import FileBasedLev
 from Game.Core.Initializer.Dto.GameAreaInitializerDTO import GameAreaInitializerDTO
 from Game.Core.Collection.EnemyCollection import EnemyCollection
 from Game.Core.Collection.BulletCollection import BulletCollection
+from Utils.Constant import Color
+
 
 class GameArea:
 
@@ -34,12 +36,20 @@ class GameArea:
 
     def init(self):
         self._init_game_area()
+
         self._screen = Surface(self._calculate_surface_size())
-        print(self._path)
+
         GameAreaHandler.register_object(self)
         BulletHandler.register_object(self._bullets)
         EnemyHandler.register_object(self._enemies)
         EnemyHandler.set_enemy_path(self._path)
+
+    def _init_game_area(self):
+        field_size = Configuration.get_int('GAME', 'field.size')
+        dto = GameAreaInitializerDTO(field_size, Configuration.get_str('GAME', 'level.first'))
+
+        game_initializer = FileBasedLevelGameAreaInitializer()
+        self._game_area, self._path = game_initializer.init_game_area(dto)
 
     def update(self):
         for fieldRow in self._game_area:
@@ -50,25 +60,13 @@ class GameArea:
         self._bullets.update()
 
     def draw(self, main_screen):
-        self._screen.fill((5, 5, 5))
+        self._screen.fill(Color.DARK_GRAY)
+
         self._draw_fields()
         self._enemies.draw(self._screen)
         self._bullets.draw(self._screen)
 
         main_screen.blit(self._screen, self._game_area_margin)
-
-    def change_field(self, position, new_field):
-        self._game_area[position[Position.Y]][position[Position.X]] = new_field
-
-    def get_game_area(self):
-        return self._game_area
-
-    def _init_game_area(self):
-        field_size = self._configuration.getint('GAME', 'field.size')
-        dto = GameAreaInitializerDTO(field_size, 'Resources/levels/level1.dat')
-
-        game_initializer = FileBasedLevelGameAreaInitializer()
-        self._game_area, self._path = game_initializer.init_game_area(dto)
 
     def _draw_fields(self):
         for fieldRow in self._game_area:
@@ -81,8 +79,11 @@ class GameArea:
                 if isinstance(field, TurretTile):
                     field.draw(self._screen)
 
+    def change_field(self, position, new_field):
+        self._game_area[position[Position.Y]][position[Position.X]] = new_field
+
     def _calculate_surface_size(self):
-        field_size = self._configuration.getint('GAME', 'field.size')
+        field_size = Configuration.get_int('GAME', 'field.size')
         return (
             len(self._game_area[Position.X]) * field_size,
             len(self._game_area) * field_size

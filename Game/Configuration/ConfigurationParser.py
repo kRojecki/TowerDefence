@@ -4,9 +4,9 @@ import configparser
 class ConfigurationParser:
 
     @staticmethod
-    def load_configuration():
+    def load_configuration(filename='config.ini'):
         config = configparser.ConfigParser()
-        config.read('config.ini')
+        config.read(filename)
 
         return config
 

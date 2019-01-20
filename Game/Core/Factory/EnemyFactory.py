@@ -1,11 +1,12 @@
 import random
 
 from Game.Utils.Helper.ClassProvider import ClassProvider
+from Objects.Enemy.Enum.EnemyEnum import EnemyEnum
 
 
 class EnemyFactory:
 
-    DEFAULT_ENEMY = 'Game.Objects.Enemy.RoundEnemy.RoundEnemy'
+    DEFAULT_ENEMY = EnemyEnum.ROUND_ENEMY
 
     @staticmethod
     def create_enemy_from_event(event, path):

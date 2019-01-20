@@ -1,9 +1,10 @@
 from Game.Utils.Helper.ClassProvider import ClassProvider
+from Objects.Bullet.Enum.BulletEnum import BulletEnum
 
 
 class BulletFactory:
 
-    DEFAULT_BULLET = 'Game.Objects.Bullet.InstantBullet.InstantBullet'
+    DEFAULT_BULLET = BulletEnum.INSTANT_BULLET
 
     @staticmethod
     def create_bullet_from_event(event):

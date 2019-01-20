@@ -1,9 +1,8 @@
-import sys
 import pygame
 
+from Configuration.Configuration import Configuration
 from Core.Screen.ScreenResolver import ScreenResolver
 from Game.Utils.Constant import Color
-from Game.Configuration.ConfigurationParser import ConfigurationParser
 from Game.Core.Event.Handler.EventHandler import EventHandler
 
 
@@ -20,20 +19,23 @@ class GameEngine:
     _event_handler = None
 
     def init(self):
-        self.config = ConfigurationParser.load_configuration()
-        self._event_handler = EventHandler()
+        Configuration.init()
         pygame.init()
+        self._event_handler = EventHandler()
 
     def setup(self):
-        size = (self.config.getint('DISPLAY', 'resolution.width'), self.config.getint('DISPLAY', 'resolution.height'))
-        pygame.display.set_mode(size)
+        size = (
+            Configuration.get_int('DISPLAY', 'resolution.width'),
+            Configuration.get_int('DISPLAY', 'resolution.height')
+        )
+        pygame.display.set_mode(size, pygame.FULLSCREEN)
 
-        pygame.display.set_caption(self.config.get('DISPLAY', 'window.title'))
+        pygame.display.set_caption(Configuration.get_str('DISPLAY', 'window.title'))
 
         self._main_surface = pygame.display.set_mode(size)
         self._clock = pygame.time.Clock()
 
-        self._current_screen = ScreenResolver.create_screen(ScreenResolver.GAME_SCREEN, self.config)
+        self._current_screen = ScreenResolver.create_screen(Configuration.get_str('GAME', 'screen.start'), self.config)
         self._current_screen.init()
 
     def run(self):
@@ -58,8 +60,3 @@ class GameEngine:
 
     def handle_events(self):
         self._event_handler.handle()
-
-    @staticmethod
-    def exit(self):
-        print(self.config.get('GAME', 'quit.message'))
-        sys.exit()
