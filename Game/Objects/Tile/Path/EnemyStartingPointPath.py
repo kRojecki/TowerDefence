@@ -3,7 +3,9 @@ import random
 from Game.Objects.Tile.Path.EnemyPath import EnemyPath
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Objects.Enemy.Enum.EnemyEnum import EnemyEnum
-from Utils.Constant import EventEnum, Position
+from Utils.Constant import Position
+from Utils.Constant.EventEnum import EventEnum
+from Utils.Constant.SubEventEnum import SubEventEnum
 
 
 class EnemyStartingPointPath(EnemyPath):
@@ -13,8 +15,9 @@ class EnemyStartingPointPath(EnemyPath):
     def update(self, nearest_enemy_position=None):
             if self._new_wave:
                 EventDispatcher.dispatch(
-                    EventEnum.NEW_ENEMY_WAVE,
+                    EventEnum.ENEMY,
                     {
+                        "sub_event": SubEventEnum.NEW_ENEMY_WAVE,
                         "start_position_range": (
                             [
                                 (self.get_position()[Position.X] - self.get_size()[Position.X])*4,

@@ -9,6 +9,7 @@ class Healthable:
 
     ALIVE = 0
     KILLED = 1
+    COMPLETED = 2
 
     _state = ALIVE
     _max_health = 100

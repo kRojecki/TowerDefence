@@ -1,12 +1,21 @@
 import pygame
 
-# GameArena
-TILE_CLICKED = pygame.USEREVENT + 1
 
-FIRE = pygame.USEREVENT + 2
-ENEMY_HIT = pygame.USEREVENT + 3
-ENEMY_KILLED = pygame.USEREVENT + 4
+class EventEnum:
+    _prefix = pygame.USEREVENT
 
-NEW_ENEMY_WAVE = pygame.USEREVENT + 5
-SPAWN_ENEMY = pygame.USEREVENT + 6
-ENEMY_COMPLETED_PATH = pygame.USEREVENT+8
+    LEVEL = _prefix + 0
+    ENEMY = _prefix + 1
+    BULLET = _prefix + 2
+
+    @staticmethod
+    def get_allowed_events():
+        return [
+            pygame.MOUSEMOTION,
+            pygame.MOUSEBUTTONDOWN,
+            pygame.MOUSEBUTTONUP,
+            pygame.QUIT,
+            EventEnum.LEVEL,
+            EventEnum.ENEMY,
+            EventEnum.BULLET
+        ]

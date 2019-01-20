@@ -2,11 +2,14 @@ import pygame
 
 from Objects.Abstracts.Drawable import Drawable
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
-from Game.Utils.Constant import EventEnum, Color
+from Game.Utils.Constant import Color
+from Game.Utils.Constant.EventEnum import EventEnum
+from Game.Utils.Constant.SubEventEnum import SubEventEnum
 from Objects.Abstracts.Healthable import Healthable
 from Objects.Abstracts.Pathable import Pathable
 from Utils.Constant import Position
 import random
+import Game.Core.Level
 
 
 class Enemy(Drawable, Pathable, Healthable):
@@ -23,6 +26,8 @@ class Enemy(Drawable, Pathable, Healthable):
 
     _max_health = 100
 
+    _score = 0
+
     def __init__(self, start_position, path):
         super().__init__()
         self._position = start_position
@@ -31,18 +36,32 @@ class Enemy(Drawable, Pathable, Healthable):
         self._surface = pygame.Surface(self._size, pygame.SRCALPHA)
 
     def draw(self, screen):
-        self._surface.fill(Color.CLEAR)
-        screen.blit(self._draw_health_bar(self._size[0]), self._get_health_bar_position())
         if self._state != self.ALIVE:
             return
 
+        self._surface.fill(Color.CLEAR)
+        screen.blit(self._draw_health_bar(self._size[0]), self._get_health_bar_position())
+
     def update(self):
+
+        if self._state != self.ALIVE:
+            return
+
         self._set_move_vector()
 
-        if self._state == self.ALIVE:
-            self._position = (
-                self._position[Position.X] + (self._move_vector[Position.X] * self._speed),
-                self._position[Position.Y] + (self._move_vector[Position.Y] * self._speed)
+        self._position = (
+            self._position[Position.X] + (self._move_vector[Position.X] * self._speed),
+            self._position[Position.Y] + (self._move_vector[Position.Y] * self._speed)
+        )
+
+        if self._completed_path():
+            self._state = self.COMPLETED
+            EventDispatcher.dispatch(
+                EventEnum.LEVEL,
+                {
+                    "sub_event": SubEventEnum.ENEMY_COMPLETED_PATH,
+                    "enemy": self,
+                }
             )
 
     def _set_move_vector(self):
@@ -60,8 +79,16 @@ class Enemy(Drawable, Pathable, Healthable):
     def _death(self):
         super()._death()
         EventDispatcher.dispatch(
-            EventEnum.ENEMY_KILLED,
+            EventEnum.ENEMY,
             {
+                "sub_event": SubEventEnum.ENEMY_KILLED,
                 'enemy': self,
             }
         )
+
+    def _completed_path(self):
+        return self.get_center()[Position.X] > Game.Core.Level.Level.area_size[Position.X] \
+               or self.get_center()[Position.Y] > Game.Core.Level.Level.area_size[Position.Y]
+
+    def get_score(self):
+        return self._score

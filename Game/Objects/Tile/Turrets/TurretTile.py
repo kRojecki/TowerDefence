@@ -1,6 +1,8 @@
 from Game.Objects.Tile.Tile import Tile
 import pygame
-from Game.Utils.Constant import Color, Position, PointableState, EventEnum
+from Game.Utils.Constant import Color, Position, PointableState
+from Game.Utils.Constant.EventEnum import EventEnum
+from Game.Utils.Constant.SubEventEnum import SubEventEnum
 from pygame import Surface
 from Game.Core.Calculator.Tile.TileRotationCalculator import TileRotationCalculator
 from Core.Calculator.CenterDistanceCalculator import CenterDistanceCalculator
@@ -83,8 +85,9 @@ class TurretTile(Tile):
 
     def _fire_to(self, nearest_enemy):
         EventDispatcher.dispatch(
-            EventEnum.FIRE,
+            EventEnum.BULLET,
             {
+                "sub_event": SubEventEnum.FIRE,
                 "turret": self,
                 "enemy": nearest_enemy,
                 "start_position": self._turret_barrel_position,

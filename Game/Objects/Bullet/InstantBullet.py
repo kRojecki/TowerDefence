@@ -1,7 +1,8 @@
 import pygame
 from Game.Objects.Bullet.Bullet import Bullet
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
-from Game.Utils.Constant import EventEnum
+from Game.Utils.Constant.EventEnum import EventEnum
+from Game.Utils.Constant.SubEventEnum import SubEventEnum
 
 
 class InstantBullet(Bullet):
@@ -16,8 +17,9 @@ class InstantBullet(Bullet):
     def update(self):
         if self._state == self.MOVING:
             EventDispatcher.dispatch(
-                EventEnum.ENEMY_HIT,
+                EventEnum.BULLET,
                 {
+                    "sub_event": SubEventEnum.ENEMY_HIT,
                     'bullet': self,
                     'damage': self._damage,
                     'target': self._target,

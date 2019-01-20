@@ -10,10 +10,9 @@ class SquareEnemy(Enemy):
     _max_health = 200
     _rotation = 0
 
-    _rotated = False
+    _rotated = True
 
     def draw(self, screen):
-
         super().draw(screen)
         rect = pygame.Rect(
             0,

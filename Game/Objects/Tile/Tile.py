@@ -1,10 +1,12 @@
 import pygame
-from Game.Utils.Constant import Color, Position, PointableState, EventEnum
+from Game.Utils.Constant import Color, Position, PointableState
+from Game.Utils.Constant.EventEnum import EventEnum
 from Objects.Abstracts.Pointerable import Pointerable
 from Objects.Abstracts.Drawable import Drawable
 from Objects.Abstracts.Changeable import Changeable
 from Game.Core.Calculator.Tile.TilePositionCalculator import TilePositionCalculator
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
+from Utils.Constant.SubEventEnum import SubEventEnum
 
 
 class Tile(Pointerable, Drawable, Changeable):
@@ -57,8 +59,9 @@ class Tile(Pointerable, Drawable, Changeable):
 
     def _click_action(self, button):
         EventDispatcher.dispatch(
-            EventEnum.TILE_CLICKED,
+            EventEnum.LEVEL,
             {
+                "sub_event": SubEventEnum.TILE_CLICKED,
                 "tile": self,
                 "button": button
             }

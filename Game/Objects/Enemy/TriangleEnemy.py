@@ -7,7 +7,7 @@ from Utils.Helper.TransformHelper.RotationHelper import RotationHelper
 class TriangleEnemy(Enemy):
 
     _size = (15, 15)
-    _speed = 1
+    _speed = 4
     _max_health = 75
 
     def draw(self, screen):

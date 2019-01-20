@@ -1,7 +1,7 @@
 from Configuration.Configuration import Configuration
 from Game.Utils.Constant import Position
 from Game.Objects.Tile.Turrets.TurretTile import TurretTile
-from Game.Core.Event.Handler.GameAreaHandler import GameAreaHandler
+from Game.Core.Event.Handler.LevelHandler import LevelHandler
 from Game.Core.Event.Handler.BulletHandler import BulletHandler
 from Game.Core.Event.Handler.EnemyHandler import EnemyHandler
 from Game.Core.Calculator.NearestEnemyPositionCalculator import NearestEnemyPositionCalculator
@@ -13,20 +13,22 @@ from Game.Core.Collection.BulletCollection import BulletCollection
 from Utils.Constant import Color
 
 
-class GameArea:
-
+class Level:
     # services
     _configuration = None
     _nearest_enemy_calculator = None
 
     # class attributes
     _screen = None
+    _score = 0
     _game_area = []
 
     _enemies = EnemyCollection()
     _bullets = BulletCollection()
 
     _path = None
+
+    area_size = (0, 0)
 
     _game_area_margin = (0, 0)  # should be changed because of adding separated surface for gameArea
 
@@ -36,10 +38,10 @@ class GameArea:
 
     def init(self):
         self._init_game_area()
+        Level.area_size = self._calculate_surface_size()
+        self._screen = Surface(Level.area_size)
 
-        self._screen = Surface(self._calculate_surface_size())
-
-        GameAreaHandler.register_object(self)
+        LevelHandler.register_object(self)
         BulletHandler.register_object(self._bullets)
         EnemyHandler.register_object(self._enemies)
         EnemyHandler.set_enemy_path(self._path)
@@ -89,4 +91,5 @@ class GameArea:
             len(self._game_area) * field_size
         )
 
-
+    def add_score(self, score):
+        self._score += score

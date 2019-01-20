@@ -1,4 +1,4 @@
-from Game.Core.GameArea import GameArea
+from Game.Core.Level import Level
 from Game.Core.Screen.AbstractScreen import AbstractScreen
 
 
@@ -8,7 +8,7 @@ class GameScreen(AbstractScreen):
 
     def __init__(self, configuration):
         super().__init__(configuration)
-        self.game_area = GameArea(configuration)
+        self.game_area = Level(configuration)
 
     def init(self):
         self.game_area.init()
