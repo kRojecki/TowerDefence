@@ -39,6 +39,8 @@ class GameEngine:
         self._current_screen = ScreenResolver.create_screen(Configuration.get_str('GAME', 'screen.start'), self.config)
         self._current_screen.init()
 
+        self._font_setup()
+
         pygame.event.set_allowed(
             EventEnum.get_allowed_events()
         )
@@ -52,7 +54,7 @@ class GameEngine:
             self._clock.tick(self.FIXED_FPS)
 
             # handle system events like closing aplication
-            self.handle_events()
+            self._handle_events()
 
             # fill whole area in color, everything is redrawed every frame
             self._main_surface.fill(Color.BLACK)
@@ -63,5 +65,8 @@ class GameEngine:
             # flip buffers to show prepared frame
             pygame.display.flip()
 
-    def handle_events(self):
+    def _handle_events(self):
         self._event_handler.handle()
+
+    def _font_setup(self):
+        self.font = pygame.font.SysFont("monospace", 10)

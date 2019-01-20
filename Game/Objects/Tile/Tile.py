@@ -60,8 +60,8 @@ class Tile(Pointerable, Drawable, Changeable):
     def _click_action(self, button):
         EventDispatcher.dispatch(
             EventEnum.LEVEL,
+            SubEventEnum.TILE_CLICKED,
             {
-                "sub_event": SubEventEnum.TILE_CLICKED,
                 "tile": self,
                 "button": button
             }

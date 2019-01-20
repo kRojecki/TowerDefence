@@ -18,8 +18,8 @@ class InstantBullet(Bullet):
         if self._state == self.MOVING:
             EventDispatcher.dispatch(
                 EventEnum.BULLET,
+                SubEventEnum.ENEMY_HIT,
                 {
-                    "sub_event": SubEventEnum.ENEMY_HIT,
                     'bullet': self,
                     'damage': self._damage,
                     'target': self._target,

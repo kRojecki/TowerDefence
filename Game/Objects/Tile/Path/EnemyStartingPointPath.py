@@ -16,8 +16,8 @@ class EnemyStartingPointPath(EnemyPath):
             if self._new_wave:
                 EventDispatcher.dispatch(
                     EventEnum.ENEMY,
+                    SubEventEnum.NEW_ENEMY_WAVE,
                     {
-                        "sub_event": SubEventEnum.NEW_ENEMY_WAVE,
                         "start_position_range": (
                             [
                                 (self.get_position()[Position.X] - self.get_size()[Position.X])*4,

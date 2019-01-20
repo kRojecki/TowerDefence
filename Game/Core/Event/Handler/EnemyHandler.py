@@ -29,8 +29,8 @@ class EnemyHandler:
             EnemyHandler._enemyCollection.remove(event.enemy)
             EventDispatcher.dispatch(
                 EventEnum.LEVEL,
+                SubEventEnum.ADD_SCORE,
                 {
-                    "sub_event": SubEventEnum.ADD_SCORE,
                     "score": event.enemy.get_score(),
                 }
             )

@@ -86,8 +86,8 @@ class TurretTile(Tile):
     def _fire_to(self, nearest_enemy):
         EventDispatcher.dispatch(
             EventEnum.BULLET,
+            SubEventEnum.FIRE,
             {
-                "sub_event": SubEventEnum.FIRE,
                 "turret": self,
                 "enemy": nearest_enemy,
                 "start_position": self._turret_barrel_position,

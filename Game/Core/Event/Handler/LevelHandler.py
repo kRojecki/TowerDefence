@@ -30,9 +30,16 @@ class LevelHandler:
     def _enemy_completed_path(event):
         EventDispatcher.dispatch(
             EventEnum.ENEMY,
+            SubEventEnum.ENEMY_REMOVE,
             {
-                "sub_event": SubEventEnum.ENEMY_REMOVE,
                 "enemy": event.enemy,
+            }
+        )
+        EventDispatcher.dispatch(
+            EventEnum.LEVEL,
+            SubEventEnum.ADD_SCORE,
+            {
+                "score": - event.enemy.get_score() * 5,
             }
         )
 

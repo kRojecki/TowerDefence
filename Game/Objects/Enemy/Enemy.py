@@ -26,7 +26,7 @@ class Enemy(Drawable, Pathable, Healthable):
 
     _max_health = 100
 
-    _score = 0
+    _score = 10
 
     def __init__(self, start_position, path):
         super().__init__()
@@ -58,8 +58,8 @@ class Enemy(Drawable, Pathable, Healthable):
             self._state = self.COMPLETED
             EventDispatcher.dispatch(
                 EventEnum.LEVEL,
+                SubEventEnum.ENEMY_COMPLETED_PATH,
                 {
-                    "sub_event": SubEventEnum.ENEMY_COMPLETED_PATH,
                     "enemy": self,
                 }
             )
@@ -80,8 +80,8 @@ class Enemy(Drawable, Pathable, Healthable):
         super()._death()
         EventDispatcher.dispatch(
             EventEnum.ENEMY,
+            SubEventEnum.ENEMY_KILLED,
             {
-                "sub_event": SubEventEnum.ENEMY_KILLED,
                 'enemy': self,
             }
         )

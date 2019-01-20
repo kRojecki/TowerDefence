@@ -1,4 +1,7 @@
+import pygame
+
 from Configuration.Configuration import Configuration
+from Core.Drawer.Score import Score
 from Game.Utils.Constant import Position
 from Game.Objects.Tile.Turrets.TurretTile import TurretTile
 from Game.Core.Event.Handler.LevelHandler import LevelHandler
@@ -17,6 +20,7 @@ class Level:
     # services
     _configuration = None
     _nearest_enemy_calculator = None
+    _draw_score = None
 
     # class attributes
     _screen = None
@@ -35,6 +39,8 @@ class Level:
     def __init__(self, configuration):
         self._configuration = configuration
         self._nearest_enemy_calculator = NearestEnemyPositionCalculator(self._enemies)
+        self._draw_score = Score()
+
 
     def init(self):
         self._init_game_area()
@@ -69,6 +75,7 @@ class Level:
         self._bullets.draw(self._screen)
 
         main_screen.blit(self._screen, self._game_area_margin)
+        main_screen.blit(self._draw_score.draw(self._score),(5, Level.area_size[Position.Y] + 8))
 
     def _draw_fields(self):
         for fieldRow in self._game_area:
@@ -93,3 +100,4 @@ class Level:
 
     def add_score(self, score):
         self._score += score
+
