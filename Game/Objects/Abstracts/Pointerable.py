@@ -1,5 +1,5 @@
 import Game.Core.Event.Handler.MouseHandler
-from Objects.Interfaces.Clickable import Clickable
+from Objects.Abstracts.Clickable import Clickable
 from Game.Utils.Constant import PointableState
 
 

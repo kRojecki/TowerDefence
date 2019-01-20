@@ -1,8 +1,8 @@
 import pygame
 from Game.Utils.Constant import Color, Position, PointableState, EventEnum
-from Objects.Interfaces.Pointerable import Pointerable
-from Objects.Interfaces.Drawable import Drawable
-from Objects.Interfaces.Changeable import Changeable
+from Objects.Abstracts.Pointerable import Pointerable
+from Objects.Abstracts.Drawable import Drawable
+from Objects.Abstracts.Changeable import Changeable
 from Game.Core.Calculator.Tile.TilePositionCalculator import TilePositionCalculator
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 

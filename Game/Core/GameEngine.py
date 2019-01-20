@@ -28,7 +28,7 @@ class GameEngine:
             Configuration.get_int('DISPLAY', 'resolution.width'),
             Configuration.get_int('DISPLAY', 'resolution.height')
         )
-        pygame.display.set_mode(size, pygame.FULLSCREEN)
+        pygame.display.set_mode(size)
 
         pygame.display.set_caption(Configuration.get_str('DISPLAY', 'window.title'))
 

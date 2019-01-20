@@ -1,4 +1,4 @@
-from Objects.Interfaces.Centerable import Centerable
+from Objects.Abstracts.Centerable import Centerable
 from Utils.Constant import Position
 from Utils.Helper.TransformHelper.RotationHelper import RotationHelper
 

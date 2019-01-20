@@ -1,10 +1,10 @@
 import pygame
 
-from Objects.Interfaces.Drawable import Drawable
+from Objects.Abstracts.Drawable import Drawable
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Game.Utils.Constant import EventEnum, Color
-from Objects.Interfaces.Healthable import Healthable
-from Objects.Interfaces.Pathable import Pathable
+from Objects.Abstracts.Healthable import Healthable
+from Objects.Abstracts.Pathable import Pathable
 from Utils.Constant import Position
 import random
 
