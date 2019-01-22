@@ -1,8 +1,8 @@
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
-from Game.Utils.Constant.EventEnum import EventEnum
+from Utils.Constant.Event.EventEnum import EventEnum
 from Game.Core.Factory.TileFactory import TileFactory
 from Game.Objects.Tile.Enum.TileEnum import TileEnum
-from Utils.Constant.SubEventEnum import SubEventEnum
+from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
 class LevelHandler:
@@ -36,13 +36,10 @@ class LevelHandler:
             }
         )
         EventDispatcher.dispatch(
-            EventEnum.LEVEL,
+            EventEnum.UI,
             SubEventEnum.ADD_SCORE,
             {
                 "score": - event.enemy.get_score() * 5,
             }
         )
 
-    @staticmethod
-    def _add_score(event):
-        LevelHandler._level.add_score(event.score)

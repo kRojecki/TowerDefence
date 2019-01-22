@@ -1,5 +1,7 @@
 import pygame
-from Game.Utils.Constant.EventEnum import EventEnum
+
+from Core.Event.Handler.UIHandler import UIHandler
+from Utils.Constant.Event.EventEnum import EventEnum
 from Game.Core.Event.Handler.MouseHandler import MouseHandler
 from Game.Core.Event.Handler.SystemHandler import SystemHandler
 from Game.Core.Event.Handler.LevelHandler import LevelHandler
@@ -19,6 +21,7 @@ class EventHandler:
         EventEnum.LEVEL:                LevelHandler,
         EventEnum.BULLET:               BulletHandler,
         EventEnum.ENEMY:                EnemyHandler,
+        EventEnum.UI:                   UIHandler,
     }
 
     def handle(self):

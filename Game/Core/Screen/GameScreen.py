@@ -1,19 +1,26 @@
+from Core.Event.Handler.UIHandler import UIHandler
+from Core.UI.UserInterface import UserInterface
 from Game.Core.Level import Level
 from Game.Core.Screen.AbstractScreen import AbstractScreen
 
 
 class GameScreen(AbstractScreen):
 
-    game_area = 0
+    _level = None
+    _user_interface = None
 
-    def __init__(self, configuration):
-        super().__init__(configuration)
-        self.game_area = Level(configuration)
+    def __init__(self):
+        self._level = Level()
+        self._user_interface = UserInterface()
 
     def init(self):
-        self.game_area.init()
+        self._level.init()
+        self._user_interface.init()
+
+        UIHandler.register_object(self._user_interface)
 
     def update(self, screen):
-        self.game_area.update()
-        self.game_area.draw(screen)
+        self._level.update()
+        self._level.draw(screen)
+        self._user_interface.draw(screen)
 

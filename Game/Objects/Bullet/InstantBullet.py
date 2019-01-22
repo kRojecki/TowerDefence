@@ -1,8 +1,8 @@
 import pygame
 from Game.Objects.Bullet.Bullet import Bullet
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
-from Game.Utils.Constant.EventEnum import EventEnum
-from Game.Utils.Constant.SubEventEnum import SubEventEnum
+from Utils.Constant.Event.EventEnum import EventEnum
+from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
 class InstantBullet(Bullet):

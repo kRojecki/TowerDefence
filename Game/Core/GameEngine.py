@@ -4,7 +4,7 @@ from Configuration.Configuration import Configuration
 from Core.Screen.ScreenResolver import ScreenResolver
 from Game.Utils.Constant import Color
 from Game.Core.Event.Handler.EventHandler import EventHandler
-from Utils.Constant.EventEnum import EventEnum
+from Utils.Constant.Event.EventEnum import EventEnum
 
 
 class GameEngine:
@@ -16,7 +16,6 @@ class GameEngine:
     _main_surface = None
     _current_screen = None
 
-    config = None
     _event_handler = None
 
     def init(self):
@@ -36,7 +35,7 @@ class GameEngine:
         self._main_surface = pygame.display.set_mode(size)
         self._clock = pygame.time.Clock()
 
-        self._current_screen = ScreenResolver.create_screen(Configuration.get_str('GAME', 'screen.start'), self.config)
+        self._current_screen = ScreenResolver.create_screen(Configuration.get_str('GAME', 'screen.start'))
         self._current_screen.init()
 
         self._font_setup()
@@ -46,9 +45,9 @@ class GameEngine:
         )
 
     def run(self):
-        self.loop()
+        self._loop()
 
-    def loop(self):
+    def _loop(self):
         while True:
             # set clock to fixed 60 fps
             self._clock.tick(self.FIXED_FPS)

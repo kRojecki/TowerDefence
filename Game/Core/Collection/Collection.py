@@ -5,8 +5,8 @@ class Collection:
 
     _elements = None
 
-    def __init__(self, elements=[]):
-        self._elements = copy.deepcopy(elements)
+    def __init__(self):
+        self._elements = []
 
     def append(self, element):
         self._elements.append(element)

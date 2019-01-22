@@ -3,8 +3,8 @@ import pygame
 from Objects.Abstracts.Drawable import Drawable
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Game.Utils.Constant import Color
-from Game.Utils.Constant.EventEnum import EventEnum
-from Game.Utils.Constant.SubEventEnum import SubEventEnum
+from Utils.Constant.Event.EventEnum import EventEnum
+from Utils.Constant.Event.SubEventEnum import SubEventEnum
 from Objects.Abstracts.Healthable import Healthable
 from Objects.Abstracts.Pathable import Pathable
 from Utils.Constant import Position
@@ -27,6 +27,7 @@ class Enemy(Drawable, Pathable, Healthable):
     _max_health = 100
 
     _score = 10
+    _money = 15
 
     def __init__(self, start_position, path):
         super().__init__()
@@ -92,3 +93,6 @@ class Enemy(Drawable, Pathable, Healthable):
 
     def get_score(self):
         return self._score
+
+    def get_money(self):
+        return self._money

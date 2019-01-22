@@ -1,11 +1,9 @@
-import random
-
 from Game.Objects.Tile.Path.EnemyPath import EnemyPath
 from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Objects.Enemy.Enum.EnemyEnum import EnemyEnum
 from Utils.Constant import Position
-from Utils.Constant.EventEnum import EventEnum
-from Utils.Constant.SubEventEnum import SubEventEnum
+from Utils.Constant.Event.EventEnum import EventEnum
+from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
 class EnemyStartingPointPath(EnemyPath):

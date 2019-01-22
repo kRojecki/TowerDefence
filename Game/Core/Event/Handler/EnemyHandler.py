@@ -1,7 +1,7 @@
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Game.Core.Factory.EnemyFactory import EnemyFactory
-from Utils.Constant.EventEnum import EventEnum
-from Utils.Constant.SubEventEnum import SubEventEnum
+from Utils.Constant.Event.EventEnum import EventEnum
+from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
 class EnemyHandler:
@@ -28,10 +28,17 @@ class EnemyHandler:
         try:
             EnemyHandler._enemyCollection.remove(event.enemy)
             EventDispatcher.dispatch(
-                EventEnum.LEVEL,
+                EventEnum.UI,
                 SubEventEnum.ADD_SCORE,
                 {
                     "score": event.enemy.get_score(),
+                }
+            )
+            EventDispatcher.dispatch(
+                EventEnum.UI,
+                SubEventEnum.ADD_FUNDS,
+                {
+                    "money": event.enemy.get_money(),
                 }
             )
         except ValueError:

@@ -1,7 +1,5 @@
-import pygame
-
 from Configuration.Configuration import Configuration
-from Core.Drawer.Score import Score
+from Core.UI.Elements.Score import Score
 from Game.Utils.Constant import Position
 from Game.Objects.Tile.Turrets.TurretTile import TurretTile
 from Game.Core.Event.Handler.LevelHandler import LevelHandler
@@ -18,13 +16,10 @@ from Utils.Constant import Color
 
 class Level:
     # services
-    _configuration = None
     _nearest_enemy_calculator = None
-    _draw_score = None
 
     # class attributes
     _screen = None
-    _score = 0
     _game_area = []
 
     _enemies = EnemyCollection()
@@ -36,11 +31,8 @@ class Level:
 
     _game_area_margin = (0, 0)  # should be changed because of adding separated surface for gameArea
 
-    def __init__(self, configuration):
-        self._configuration = configuration
+    def __init__(self):
         self._nearest_enemy_calculator = NearestEnemyPositionCalculator(self._enemies)
-        self._draw_score = Score()
-
 
     def init(self):
         self._init_game_area()
@@ -57,7 +49,8 @@ class Level:
         dto = GameAreaInitializerDTO(field_size, Configuration.get_str('GAME', 'level.first'))
 
         game_initializer = FileBasedLevelGameAreaInitializer()
-        self._game_area, self._path = game_initializer.init_game_area(dto)
+        self._game_area = game_initializer.init_game_area(dto)
+        self._path = game_initializer.prepare_map_path(self._game_area)
 
     def update(self):
         for fieldRow in self._game_area:
@@ -75,7 +68,6 @@ class Level:
         self._bullets.draw(self._screen)
 
         main_screen.blit(self._screen, self._game_area_margin)
-        main_screen.blit(self._draw_score.draw(self._score),(5, Level.area_size[Position.Y] + 8))
 
     def _draw_fields(self):
         for fieldRow in self._game_area:
@@ -97,7 +89,4 @@ class Level:
             len(self._game_area[Position.X]) * field_size,
             len(self._game_area) * field_size
         )
-
-    def add_score(self, score):
-        self._score += score
 

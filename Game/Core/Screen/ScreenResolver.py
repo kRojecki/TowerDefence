@@ -9,5 +9,5 @@ class ScreenResolver:
     ON_START_SCREEN = MENU_SCREEN
 
     @staticmethod
-    def create_screen(screen_name, configuration):
-        return ClassProvider.provide_class(screen_name)(configuration)
+    def create_screen(screen_name):
+        return ClassProvider.provide_class(screen_name)()
