@@ -17,7 +17,7 @@ class SellButton(Button):
 
     def _click_action(self, pressed):
         EventDispatcher.dispatch(
-            EventEnum.TILE,
+            EventEnum.LEVEL,
             SubEventEnum.TURRET_SOLD,
             {
                 'tile': self._linked_element

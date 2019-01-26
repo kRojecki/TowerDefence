@@ -1,5 +1,6 @@
 import pygame
 from Game.Utils.Constant import Color, Position, PointableState
+from Objects.Abstracts.Priceable import Priceable
 from Utils.Constant.Event.EventEnum import EventEnum
 from Objects.Abstracts.Pointerable import Pointerable
 from Objects.Abstracts.Drawable import Drawable
@@ -9,7 +10,7 @@ from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
-class Tile(Pointerable, Drawable, Changeable):
+class Tile(Pointerable, Drawable, Changeable, Priceable):
 
     _border_color = Color.GRAY
 
@@ -18,6 +19,8 @@ class Tile(Pointerable, Drawable, Changeable):
         PointableState.HOVER: Color.GRAY,
         PointableState.CLICKED: Color.WHITE
         }
+
+    _price = 10
 
     _tile_position = [0, 0]
 

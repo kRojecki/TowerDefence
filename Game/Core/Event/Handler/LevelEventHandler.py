@@ -1,5 +1,7 @@
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
+from Core.Factory.TileFactory import TileFactory
 from Core.Resolver.TileClickResolver import TileClickResolver
+from Objects.Tile.Enum.TileEnum import TileEnum
 from Utils.Constant.Event.EventEnum import EventEnum
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
@@ -43,3 +45,16 @@ class LevelEventHandler:
             }
         )
 
+    @staticmethod
+    def _turret_sold(event):
+        LevelEventHandler._level.change_field(
+            event.tile.get_tile_position(),
+            TileFactory.create_tile_from_tile(event.tile, TileEnum.EMPTY_TILE)
+        )
+        EventDispatcher.dispatch(
+            EventEnum.UI,
+            SubEventEnum.ADD_FUNDS,
+            {
+                "money": event.tile.get_sell_price(),
+            }
+        )

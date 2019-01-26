@@ -9,6 +9,4 @@ class TileEventHandler:
     def _turret_upgrade(event):
         pass
 
-    @staticmethod
-    def _turret_sold(event):
-        pass
+
