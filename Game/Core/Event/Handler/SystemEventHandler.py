@@ -2,7 +2,7 @@ import pygame
 import sys
 
 
-class SystemHandler:
+class SystemEventHandler:
 
     @staticmethod
     def handle(event):

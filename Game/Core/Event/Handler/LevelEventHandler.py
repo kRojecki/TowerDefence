@@ -4,18 +4,18 @@ from Utils.Constant.Event.EventEnum import EventEnum
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
-class LevelHandler:
+class LevelEventHandler:
 
     _level = None
 
     @staticmethod
     def handle(event):
-        method_name = getattr(LevelHandler, event.sub_event)
+        method_name = getattr(LevelEventHandler, event.sub_event)
         method_name(event)
 
     @staticmethod
     def register_object(level):
-        LevelHandler._level = level
+        LevelEventHandler._level = level
 
     @staticmethod
     def _tile_clicked(event):
@@ -24,7 +24,7 @@ class LevelHandler:
             SubEventEnum.HIDE_PANEL,
             {}
         )
-        TileClickResolver.resolve(event, LevelHandler._level)
+        TileClickResolver.resolve(event, LevelEventHandler._level)
 
     @staticmethod
     def _enemy_completed_path(event):

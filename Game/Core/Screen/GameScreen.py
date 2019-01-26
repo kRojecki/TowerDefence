@@ -1,4 +1,4 @@
-from Core.Event.Handler.UIHandler import UIHandler
+from Core.Event.Handler.UIEventHandler import UIEventHandler
 from Core.UI.UserInterface import UserInterface
 from Game.Core.Level import Level
 from Game.Core.Screen.AbstractScreen import AbstractScreen
@@ -17,7 +17,7 @@ class GameScreen(AbstractScreen):
         self._level.init()
         self._user_interface.init()
 
-        UIHandler.register_object(self._user_interface)
+        UIEventHandler.register_object(self._user_interface)
 
     def update(self, screen):
         self._level.update()

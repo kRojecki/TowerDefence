@@ -1,31 +1,33 @@
 import pygame
 
-from Core.Event.Handler.UIHandler import UIHandler
+from Core.Event.Handler.TileEventHandler import TileEventHandler
+from Core.Event.Handler.UIEventHandler import UIEventHandler
 from Utils.Constant.Event.EventEnum import EventEnum
-from Game.Core.Event.Handler.MouseHandler import MouseHandler
-from Game.Core.Event.Handler.SystemHandler import SystemHandler
-from Game.Core.Event.Handler.LevelHandler import LevelHandler
-from Game.Core.Event.Handler.EnemyHandler import EnemyHandler
-from Game.Core.Event.Handler.BulletHandler import BulletHandler
+from Game.Core.Event.Handler.MouseEventHandler import MouseEventHandler
+from Game.Core.Event.Handler.SystemEventHandler import SystemEventHandler
+from Game.Core.Event.Handler.LevelEventHandler import LevelEventHandler
+from Game.Core.Event.Handler.EnemyEventHandler import EnemyEventHandler
+from Game.Core.Event.Handler.BulletEventHandler import BulletEventHandler
 
 
 class EventHandler:
 
     _handlers = {
-        pygame.QUIT:                    SystemHandler,
+        pygame.QUIT:                    SystemEventHandler,
 
-        pygame.MOUSEBUTTONDOWN:         MouseHandler,
-        pygame.MOUSEBUTTONUP:           MouseHandler,
-        pygame.MOUSEMOTION:             MouseHandler,
+        pygame.MOUSEBUTTONDOWN:         MouseEventHandler,
+        pygame.MOUSEBUTTONUP:           MouseEventHandler,
+        pygame.MOUSEMOTION:             MouseEventHandler,
 
-        EventEnum.LEVEL:                LevelHandler,
-        EventEnum.BULLET:               BulletHandler,
-        EventEnum.ENEMY:                EnemyHandler,
-        EventEnum.UI:                   UIHandler,
+        EventEnum.LEVEL:                LevelEventHandler,
+        EventEnum.BULLET:               BulletEventHandler,
+        EventEnum.ENEMY:                EnemyEventHandler,
+        EventEnum.TILE:                 TileEventHandler,
+        EventEnum.UI:                   UIEventHandler,
     }
 
     def init(self):
-        MouseHandler.init()
+        MouseEventHandler.init()
 
     def handle(self):
         for event in pygame.event.get():

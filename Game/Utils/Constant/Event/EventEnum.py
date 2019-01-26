@@ -7,7 +7,9 @@ class EventEnum:
     LEVEL = _prefix + 0
     ENEMY = _prefix + 1
     BULLET = _prefix + 2
-    UI = _prefix + 3
+    TILE = _prefix + 3
+    UI = _prefix + 4
+
 
     @staticmethod
     def get_allowed_events():
@@ -19,5 +21,6 @@ class EventEnum:
             EventEnum.LEVEL,
             EventEnum.ENEMY,
             EventEnum.BULLET,
+            EventEnum.TILE,
             EventEnum.UI,
         ]

@@ -1,7 +1,9 @@
 class SubEventEnum:
 
+    # Level
     TILE_CLICKED = '_tile_clicked'
 
+    # Tile
     TURRET_BUILD = '_turret_build'
     TURRET_UPGRADE = '_turret_upgrade'
     TURRET_SOLD = '_turret_sold'
@@ -15,6 +17,7 @@ class SubEventEnum:
     SPAWN_ENEMY = '_spawn_enemy'
     ENEMY_COMPLETED_PATH = '_enemy_completed_path'
 
+    # UI
     ADD_SCORE = '_add_score'
     ADD_FUNDS = '_add_funds'
     RESET_SCORE = '_reset_score'

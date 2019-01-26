@@ -4,7 +4,7 @@ from Utils.Constant.Event.EventEnum import EventEnum
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
-class EnemyHandler:
+class EnemyEventHandler:
 
     _enemyCollection = None
 
@@ -12,21 +12,21 @@ class EnemyHandler:
 
     @staticmethod
     def register_object(collection):
-        EnemyHandler._enemyCollection = collection
+        EnemyEventHandler._enemyCollection = collection
 
     @staticmethod
     def set_enemy_path(path):
-        EnemyHandler._path = path
+        EnemyEventHandler._path = path
 
     @staticmethod
     def handle(event):
-        method_name = getattr(EnemyHandler, event.sub_event)
+        method_name = getattr(EnemyEventHandler, event.sub_event)
         method_name(event)
 
     @staticmethod
     def _enemy_killed(event):
         try:
-            EnemyHandler._enemyCollection.remove(event.enemy)
+            EnemyEventHandler._enemyCollection.remove(event.enemy)
             EventDispatcher.dispatch(
                 EventEnum.UI,
                 SubEventEnum.ADD_SCORE,
@@ -46,9 +46,9 @@ class EnemyHandler:
 
     @staticmethod
     def _new_enemy_wave(event):
-        enemies = EnemyFactory.create_enemy_from_event(event, EnemyHandler._path)
+        enemies = EnemyFactory.create_enemy_from_event(event, EnemyEventHandler._path)
         for enemy in enemies:
-            EnemyHandler._enemyCollection.append(enemy)
+            EnemyEventHandler._enemyCollection.append(enemy)
 
     @staticmethod
     def _enemy_completed_path(event):
@@ -56,4 +56,4 @@ class EnemyHandler:
 
     @staticmethod
     def _enemy_remove(event):
-        EnemyHandler._enemyCollection.remove(event.enemy)
+        EnemyEventHandler._enemyCollection.remove(event.enemy)

@@ -17,7 +17,6 @@ class Panel(UIElement):
         self._linked_element = linked_element
         self._position = linked_element.get_center()
         self._surface = pygame.Surface(self._size)
-        self._update_global_position()
 
     def draw(self, screen):
         super().draw(screen)

@@ -1,6 +1,5 @@
 import pygame
 
-from Core.Event.Handler.MouseHandler import MouseHandler
 from Core.UI.Elements.Abstract.UIElement import UIElement
 from Objects.Abstracts.Pointerable import Pointerable
 from Utils.Constant import Color
@@ -28,3 +27,9 @@ class Label(UIElement, Pointerable):
 
     def _click_action(self, pressed):
         print('Button pressed!')
+
+    def get_label_size(self):
+        return self._font.size(self._get_content_to_show())
+
+    def set_position(self, position):
+        self._position = position

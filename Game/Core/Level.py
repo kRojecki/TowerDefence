@@ -1,9 +1,9 @@
 from Configuration.Configuration import Configuration
 from Game.Utils.Constant import Position
 from Game.Objects.Tile.Turrets.TurretTile import TurretTile
-from Game.Core.Event.Handler.LevelHandler import LevelHandler
-from Game.Core.Event.Handler.BulletHandler import BulletHandler
-from Game.Core.Event.Handler.EnemyHandler import EnemyHandler
+from Game.Core.Event.Handler.LevelEventHandler import LevelEventHandler
+from Game.Core.Event.Handler.BulletEventHandler import BulletEventHandler
+from Game.Core.Event.Handler.EnemyEventHandler import EnemyEventHandler
 from Game.Core.Calculator.NearestEnemyPositionCalculator import NearestEnemyPositionCalculator
 from pygame import Surface
 from Game.Core.Initializer.FileBasedLevelGameAreaInitializer import FileBasedLevelGameAreaInitializer
@@ -38,10 +38,10 @@ class Level:
         Level.area_size = self._calculate_surface_size()
         self._screen = Surface(Level.area_size)
 
-        LevelHandler.register_object(self)
-        BulletHandler.register_object(self._bullets)
-        EnemyHandler.register_object(self._enemies)
-        EnemyHandler.set_enemy_path(self._path)
+        LevelEventHandler.register_object(self)
+        BulletEventHandler.register_object(self._bullets)
+        EnemyEventHandler.register_object(self._enemies)
+        EnemyEventHandler.set_enemy_path(self._path)
 
     def _init_game_area(self):
         field_size = Configuration.get_int('GAME', 'field.size')
