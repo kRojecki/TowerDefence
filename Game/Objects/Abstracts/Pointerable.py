@@ -8,10 +8,13 @@ class Pointerable(Clickable):
     _position = ()
     _size = ()
 
+    _layer = 0
+
     _state = PointableState.CLEAR
 
     def __init__(self):
-        Game.Core.Event.Handler.MouseHandler.MouseHandler.register_object(self)
+        Game.Core.Event.Handler.MouseHandler.MouseHandler.register_object(self, self._layer)
+
 
     def get_position(self):
         return self._position

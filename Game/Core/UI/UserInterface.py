@@ -1,10 +1,10 @@
-from Core.UI.Elements.Score import Score
-from Core.UI.Elements.Wallet import Wallet
+from Core.UI.Elements.IntLabel import IntLabel
 
 
 class UserInterface:
 
     _elements = {}
+    _panels = []
 
     def init(self):
         self._init_elements()
@@ -19,6 +19,19 @@ class UserInterface:
 
     def _init_elements(self):
         self._elements.update({
-            'score': Score(),
-            'wallet': Wallet(),
+            'score': IntLabel((5, 5), 'Score :'),
+            'wallet': IntLabel((5, 25), '$ '),
         })
+
+    def add_element(self, element_name, element):
+        self._elements.update({
+                element_name: element,
+        })
+        self._panels.append(element_name)
+
+    def remove_panel(self):
+        for panel_name in self._panels:
+            del self._elements[panel_name]
+
+        self._panels.clear()
+

@@ -66,3 +66,6 @@ class Tile(Pointerable, Drawable, Changeable):
                 "button": button
             }
         )
+
+    def get_hash(self):
+        return str(type(self)) + str(self.get_tile_position())

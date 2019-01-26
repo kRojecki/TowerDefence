@@ -2,6 +2,10 @@ class SubEventEnum:
 
     TILE_CLICKED = '_tile_clicked'
 
+    TURRET_BUILD = '_turret_build'
+    TURRET_UPGRADE = '_turret_upgrade'
+    TURRET_SOLD = '_turret_sold'
+
     FIRE = '_fire'
     ENEMY_HIT = '_enemy_hit'
     ENEMY_KILLED = '_enemy_killed'
@@ -14,3 +18,7 @@ class SubEventEnum:
     ADD_SCORE = '_add_score'
     ADD_FUNDS = '_add_funds'
     RESET_SCORE = '_reset_score'
+
+    SHOW_PANEL = '_show_panel'
+    HIDE_PANEL = '_hide_panel'
+

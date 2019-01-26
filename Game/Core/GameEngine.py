@@ -35,10 +35,13 @@ class GameEngine:
         self._main_surface = pygame.display.set_mode(size)
         self._clock = pygame.time.Clock()
 
+        self._event_handler.init()
+
         self._current_screen = ScreenResolver.create_screen(Configuration.get_str('GAME', 'screen.start'))
         self._current_screen.init()
 
         self._font_setup()
+
 
         pygame.event.set_allowed(
             EventEnum.get_allowed_events()

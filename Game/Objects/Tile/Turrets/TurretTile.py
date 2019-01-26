@@ -32,6 +32,8 @@ class TurretTile(Tile):
 
     _fire_rate_clock = 0
 
+    _price = 10
+
     _bullet_type = BulletEnum.INSTANT_BULLET
 
     def _draw_border(self, screen):

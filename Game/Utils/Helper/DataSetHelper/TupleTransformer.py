@@ -22,3 +22,14 @@ class TupleTransformer:
 
         return tuple(tuple1)
 
+    @staticmethod
+    def negate_tuple(tuple1):
+
+        tuple_tmp = list(tuple1)
+
+        i = 0
+        for e in tuple_tmp:
+            tuple_tmp[i] = -tuple_tmp[i]
+            i += 1
+
+        return tuple(tuple_tmp)

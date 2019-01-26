@@ -24,6 +24,9 @@ class EventHandler:
         EventEnum.UI:                   UIHandler,
     }
 
+    def init(self):
+        MouseHandler.init()
+
     def handle(self):
         for event in pygame.event.get():
             if event.type in self._handlers:

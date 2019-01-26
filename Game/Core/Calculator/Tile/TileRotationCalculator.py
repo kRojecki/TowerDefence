@@ -18,7 +18,8 @@ class TileRotationCalculator:
         original_position = (
             tile.get_position()[Position.X] + (tile.get_size()[Position.X])-8,
             tile.get_position()[Position.Y] + (tile.get_size()[Position.Y])-10
-        ) #experimental values...
+        )
+        # experimental values...
 
         radian_angle = (rotation - 228) * math.pi / 180
 

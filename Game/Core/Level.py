@@ -1,5 +1,4 @@
 from Configuration.Configuration import Configuration
-from Core.UI.Elements.Score import Score
 from Game.Utils.Constant import Position
 from Game.Objects.Tile.Turrets.TurretTile import TurretTile
 from Game.Core.Event.Handler.LevelHandler import LevelHandler

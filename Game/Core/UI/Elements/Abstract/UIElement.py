@@ -1,6 +1,8 @@
-class UIElement:
+from Objects.Abstracts.Drawable import Drawable
 
-    _position = (0, 0)
 
-    def draw(self, screen):
+class UIElement(Drawable):
+
+    def __init__(self):
+        super().__init__()
         pass

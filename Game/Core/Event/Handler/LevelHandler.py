@@ -1,7 +1,6 @@
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
+from Core.Resolver.TileClickResolver import TileClickResolver
 from Utils.Constant.Event.EventEnum import EventEnum
-from Game.Core.Factory.TileFactory import TileFactory
-from Game.Objects.Tile.Enum.TileEnum import TileEnum
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
@@ -20,11 +19,12 @@ class LevelHandler:
 
     @staticmethod
     def _tile_clicked(event):
-        if event.tile.is_changeable():
-            LevelHandler._level.change_field(
-                event.tile.get_tile_position(),
-                TileFactory.create_tile_from_tile(event.tile, TileEnum.ROCKET_TURRET_TILE)
-            )
+        EventDispatcher.dispatch(
+            EventEnum.UI,
+            SubEventEnum.HIDE_PANEL,
+            {}
+        )
+        TileClickResolver.resolve(event, LevelHandler._level)
 
     @staticmethod
     def _enemy_completed_path(event):
