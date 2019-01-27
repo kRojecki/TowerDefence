@@ -1,4 +1,4 @@
-from Game.Core.GameEngine import GameEngine
+from Core.Engine.GameEngine import GameEngine
 
 game_engine = GameEngine()
 game_engine.init()

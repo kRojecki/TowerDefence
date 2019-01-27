@@ -9,7 +9,7 @@ from Objects.Abstracts.Healthable import Healthable
 from Objects.Abstracts.Pathable import Pathable
 from Utils.Constant import Position
 import random
-import Game.Core.Level
+import Core.Level.Level
 
 
 class Enemy(Drawable, Pathable, Healthable):
@@ -88,8 +88,8 @@ class Enemy(Drawable, Pathable, Healthable):
         )
 
     def _completed_path(self):
-        return self.get_center()[Position.X] > Game.Core.Level.Level.area_size[Position.X] \
-               or self.get_center()[Position.Y] > Game.Core.Level.Level.area_size[Position.Y]
+        return self.get_center()[Position.X] > Core.Level.Level.Level.area_size[Position.X] \
+               or self.get_center()[Position.Y] > Core.Level.Level.Level.area_size[Position.Y]
 
     def get_score(self):
         return self._score

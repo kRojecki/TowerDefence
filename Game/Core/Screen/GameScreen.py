@@ -1,6 +1,6 @@
 from Core.Event.Handler.UIEventHandler import UIEventHandler
 from Core.UI.UserInterface import UserInterface
-from Game.Core.Level import Level
+from Core.Level.Level import Level
 from Game.Core.Screen.AbstractScreen import AbstractScreen
 
 
