@@ -18,12 +18,12 @@ class GameEngine:
 
     _event_handler = None
 
-    def init(self):
+    def init(self) -> None:
         Configuration.init()
         pygame.init()
         self._event_handler = EventHandler()
 
-    def setup(self):
+    def setup(self) -> None:
         size = (
             Configuration.get_int('DISPLAY', 'resolution.width'),
             Configuration.get_int('DISPLAY', 'resolution.height')
@@ -40,17 +40,10 @@ class GameEngine:
         self._current_screen = ScreenResolver.create_screen(Configuration.get_str('GAME', 'screen.start'))
         self._current_screen.init()
 
-        self._font_setup()
-
-
-        pygame.event.set_allowed(
-            EventEnum.get_allowed_events()
-        )
-
-    def run(self):
+    def run(self) -> None:
         self._loop()
 
-    def _loop(self):
+    def _loop(self) -> None:
         while True:
             # set clock to fixed 60 fps
             self._clock.tick(self.FIXED_FPS)
@@ -67,8 +60,5 @@ class GameEngine:
             # flip buffers to show prepared frame
             pygame.display.flip()
 
-    def _handle_events(self):
+    def _handle_events(self) -> None:
         self._event_handler.handle()
-
-    def _font_setup(self):
-        self.font = pygame.font.SysFont("monospace", 10)

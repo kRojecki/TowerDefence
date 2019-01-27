@@ -20,6 +20,6 @@ class Configuration:
     @staticmethod
     def _get_configuration_value(section, key):
         try:
-            return (Configuration._configuration[section][key])
+            return Configuration._configuration[section][key]
         except Exception:
             raise Exception('Config key ['+section+']['+key+'] not found!')
