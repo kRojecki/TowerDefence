@@ -25,7 +25,7 @@ class UIEventHandler(AbstractEventHandler):
     @staticmethod
     def _show_panel(event) -> None:
 
-        UIEventHandler._set_clip(event.tile.get_center())
+        UIEventHandler._set_clip(pygame.mouse.get_pos())
         UIEventHandler._set_active_layer(LayerEnum.PANEL)
 
         UIEventHandler._ui.add_element(

@@ -1,9 +1,9 @@
-from Configuration.Configuration import Configuration
+from Configuration.General.Configuration import Configuration
 from Core.Path.Path import Path
 from Core.Path.PathStep import PathStep
-from Game.Objects.Tile.Path.EnemyStartingPointPath import EnemyStartingPointPath
 from Game.Objects.Tile.Path.EnemyEndPointPath import EnemyEndPointPath
 from Game.Objects.Tile.Path.EnemyPath import EnemyPath
+from Game.Objects.Tile.Path.EnemyStartingPointPath import EnemyStartingPointPath
 from Utils.Constant import Position
 from Utils.Helper.DataSetHelper.TupleTransformer import TupleTransformer
 

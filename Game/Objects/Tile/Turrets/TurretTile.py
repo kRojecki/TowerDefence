@@ -1,19 +1,19 @@
-from Game.Objects.Tile.Tile import Tile
 import pygame
+from pygame import Surface
+
+from Core.Calculator.CenterDistanceCalculator import CenterDistanceCalculator
+from Game.Core.Calculator.Tile.TileRotationCalculator import TileRotationCalculator
+from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
+from Game.Objects.Tile.Tile import Tile
 from Game.Utils.Constant import Color, Position, PointableState
+from Game.Utils.Helper.TransformHelper.RotationHelper import RotationHelper
+from Objects.Abstracts.Tile.Fireable import Fireable
+from Objects.Abstracts.Tile.Upgradeable import Upgradeable
 from Utils.Constant.Event.EventEnum import EventEnum
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
-from pygame import Surface
-from Game.Core.Calculator.Tile.TileRotationCalculator import TileRotationCalculator
-from Core.Calculator.CenterDistanceCalculator import CenterDistanceCalculator
-from Game.Core.Event.Dispatcher.EventDispatcher import EventDispatcher
-from Game.Objects.Bullet.Enum.BulletEnum import BulletEnum
 
 
-from Game.Utils.Helper.TransformHelper.RotationHelper import RotationHelper
-
-
-class TurretTile(Tile):
+class TurretTile(Tile, Fireable, Upgradeable):
     _border_color = Color.T_TURRET_TILE_BORDER
     _background_color = {
         PointableState.CLEAR: Color.T_TURRET_TILE_BACKGROUND_CLEAR,
@@ -24,19 +24,8 @@ class TurretTile(Tile):
     _range_border_color = Color.LIGHT_GRAY
 
     _turret_barrel_position = ()
-
     _rotation = -90
-    _range = 75
-    _bullet = 0
-    _fire_rate = 5
-
     _fire_rate_clock = 0
-
-    _price = 10
-
-    _damage = 5
-
-    _bullet_type = BulletEnum.INSTANT_BULLET
 
     def _draw_border(self, screen):
         super()._draw_border(screen)
@@ -110,11 +99,9 @@ class TurretTile(Tile):
             1
         )
 
-    def get_damage(self):
-        return self._damage
-
-    def get_range(self):
-        return self._range
-
-    def get_fire_rate(self):
-        return self._fire_rate
+    def _upgrade_stats(self, upgrade_dto):
+        print(self._damage)
+        self._damage = upgrade_dto.get_damage()
+        self._range = upgrade_dto.get_range()
+        self._fire_rate = upgrade_dto.get_fire_rate()
+        print(self._damage)

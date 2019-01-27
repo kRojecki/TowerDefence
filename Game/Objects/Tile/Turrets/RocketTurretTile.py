@@ -7,8 +7,11 @@ from Game.Objects.Bullet.Enum.BulletEnum import BulletEnum
 
 class RocketTurretTile(TurretTile):
 
-    _range = 150
-    _fire_rate = 2
+    _damage = 15
+    _fire_rate = 3
+    _range = 75
+
+    _price = 50
 
     _bullet_type = BulletEnum.ROCKET_INSTANT_BULLET
 

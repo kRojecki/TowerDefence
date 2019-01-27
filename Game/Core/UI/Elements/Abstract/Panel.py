@@ -15,11 +15,12 @@ class Panel(UIElement):
 
     def __init__(self, linked_element):
         self._linked_element = linked_element
-        self._position = linked_element.get_center()
-        self._surface = pygame.Surface(self._size)
+        self._position = pygame.mouse.get_pos()
+        self._surface = pygame.Surface(self._size, pygame.SRCALPHA)
 
     def draw(self, screen):
         super().draw(screen)
+        self._surface.fill(Color.DARK_GRAY)
         pygame.draw.rect(self._surface, Color.GRAY, Rect((0, 0), self._size), 1)
         for element in self._elements:
             element.draw(self._surface)

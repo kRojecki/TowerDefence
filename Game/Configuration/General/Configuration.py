@@ -1,4 +1,4 @@
-from Configuration.ConfigurationParser import ConfigurationParser
+from Configuration.General.ConfigurationParser import ConfigurationParser
 
 
 class Configuration:

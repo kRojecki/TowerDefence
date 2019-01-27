@@ -1,15 +1,16 @@
-from Configuration.Configuration import Configuration
-from Game.Utils.Constant import Position
-from Game.Objects.Tile.Turrets.TurretTile import TurretTile
-from Game.Core.Event.Handler.LevelEventHandler import LevelEventHandler
+from pygame import Surface
+
+from Configuration.General.Configuration import Configuration
+from Core.Initializer.Level.Dto.GameAreaInitializerDTO import GameAreaInitializerDTO
+from Core.Initializer.Level.FileBasedLevelGameAreaInitializer import FileBasedLevelGameAreaInitializer
+from Game.Core.Calculator.NearestEnemyPositionCalculator import NearestEnemyPositionCalculator
+from Game.Core.Collection.BulletCollection import BulletCollection
+from Game.Core.Collection.EnemyCollection import EnemyCollection
 from Game.Core.Event.Handler.BulletEventHandler import BulletEventHandler
 from Game.Core.Event.Handler.EnemyEventHandler import EnemyEventHandler
-from Game.Core.Calculator.NearestEnemyPositionCalculator import NearestEnemyPositionCalculator
-from pygame import Surface
-from Game.Core.Initializer.FileBasedLevelGameAreaInitializer import FileBasedLevelGameAreaInitializer
-from Game.Core.Initializer.Dto.GameAreaInitializerDTO import GameAreaInitializerDTO
-from Game.Core.Collection.EnemyCollection import EnemyCollection
-from Game.Core.Collection.BulletCollection import BulletCollection
+from Game.Core.Event.Handler.LevelEventHandler import LevelEventHandler
+from Game.Objects.Tile.Turrets.TurretTile import TurretTile
+from Game.Utils.Constant import Position
 from Utils.Constant import Color
 
 

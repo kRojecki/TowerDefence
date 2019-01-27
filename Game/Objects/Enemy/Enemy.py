@@ -1,15 +1,16 @@
+import random
+
 import pygame
 
-from Objects.Abstracts.Drawable import Drawable
+import Core.Level.Level
 from Core.Event.Dispatcher.EventDispatcher import EventDispatcher
 from Game.Utils.Constant import Color
+from Objects.Abstracts.Drawable import Drawable
+from Objects.Abstracts.Enemy.Healthable import Healthable
+from Objects.Abstracts.Enemy.Pathable import Pathable
+from Utils.Constant import Position
 from Utils.Constant.Event.EventEnum import EventEnum
 from Utils.Constant.Event.SubEventEnum import SubEventEnum
-from Objects.Abstracts.Healthable import Healthable
-from Objects.Abstracts.Pathable import Pathable
-from Utils.Constant import Position
-import random
-import Core.Level.Level
 
 
 class Enemy(Drawable, Pathable, Healthable):

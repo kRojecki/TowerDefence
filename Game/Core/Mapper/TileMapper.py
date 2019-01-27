@@ -1,10 +1,10 @@
-from Game.Utils.Helper.ClassProvider import ClassProvider
 from Game.Core.Factory.TileFactory import TileFactory
+from Game.Utils.Helper.ClassProvider import ClassProvider
 
 
 class TileMapper:
 
-    DEFAULT = 'Resources.TileMap.Default.Default'
+    DEFAULT = 'Resources.Data.TileMap.Default.Default'
 
     _definition = None
     _map = None

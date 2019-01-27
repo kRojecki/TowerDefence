@@ -1,10 +1,9 @@
 import pygame
 
-from Configuration.Configuration import Configuration
+from Configuration.General.Configuration import Configuration
 from Core.Screen.ScreenResolver import ScreenResolver
-from Game.Utils.Constant import Color
 from Game.Core.Event.Handler.EventHandler import EventHandler
-from Utils.Constant.Event.EventEnum import EventEnum
+from Game.Utils.Constant import Color
 
 
 class GameEngine:

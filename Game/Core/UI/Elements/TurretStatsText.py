@@ -14,6 +14,7 @@ class TurretStatsText(Text):
         self.init()
 
     def init(self):
+        self._stat_rows.clear()
         self._stat_rows.append(
             IntLabel((5, 5), "Damage: ", self._turret.get_damage())
         )
@@ -22,6 +23,9 @@ class TurretStatsText(Text):
         )
         self._stat_rows.append(
             IntLabel((5, 35), "Fire rate: ", self._turret.get_fire_rate())
+        )
+        self._stat_rows.append(
+            IntLabel((55, 75), "", self._turret.get_level())
         )
 
     def draw(self, screen):
