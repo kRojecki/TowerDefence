@@ -15,3 +15,7 @@ class TurretPanel(Panel):
         self._elements.append(
             SellButton('$', (65, 70), linked_element)
         )
+
+    @staticmethod
+    def get_clip_size():
+        return TurretPanel._size

@@ -27,7 +27,7 @@ class EventHandler:
     }
 
     def init(self):
-        MouseEventHandler.init()
+        pass
 
     def handle(self):
         for event in pygame.event.get():

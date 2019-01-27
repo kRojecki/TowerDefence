@@ -58,3 +58,8 @@ class LevelEventHandler:
                 "money": event.tile.get_sell_price(),
             }
         )
+        EventDispatcher.dispatch(
+            EventEnum.UI,
+            SubEventEnum.HIDE_PANEL,
+            {}
+        )

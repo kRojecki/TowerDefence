@@ -1,3 +1,5 @@
+import pygame
+
 import Game.Core.Event.Handler.MouseEventHandler as MouseHandler
 from Core.UI.Elements.TurretPanel import TurretPanel
 from Utils.Constant.LayerEnum import LayerEnum
