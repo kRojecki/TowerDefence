@@ -8,8 +8,8 @@ class BulletFactory:
 
     @staticmethod
     def create_bullet_from_event(event):
-        return BulletFactory.create_bullet_from_args(event.start_position, event.enemy, event.bullet_type)
+        return BulletFactory.create_bullet_from_args(event.start_position, event.enemy, event.damage, event.bullet_type)
 
     @staticmethod
-    def create_bullet_from_args(position, target, bullet_type=DEFAULT_BULLET):
-        return ClassProvider.provide_class(bullet_type)(position, target)
+    def create_bullet_from_args(position, target, damage, bullet_type=DEFAULT_BULLET):
+        return ClassProvider.provide_class(bullet_type)(position, target, damage)

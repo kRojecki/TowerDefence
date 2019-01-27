@@ -6,7 +6,7 @@ class IntLabel(Label):
 
     _value = 0
 
-    def __init__(self, prefix, position, font_size=16, value=0):
+    def __init__(self, position, prefix, value=0, font_size=12):
         super().__init__(position, prefix, font_size)
         self._value = value
 

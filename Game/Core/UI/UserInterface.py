@@ -20,7 +20,7 @@ class UserInterface:
     def _init_elements(self):
         self._elements.update({
             'score': IntLabel((5, 5), 'Score :'),
-            'wallet': IntLabel((5, 25), '$ '),
+            'wallet': IntLabel((5, 20), '$ ', 0, 18),
         })
 
     def add_element(self, element_name, element):

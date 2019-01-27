@@ -20,7 +20,7 @@ class TurretTile(Tile):
         PointableState.HOVER: Color.T_TURRET_TILE_BACKGROUND_HOVER,
         PointableState.CLICKED: Color.T_TURRET_TILE_BACKGROUND_CLICKED
     }
-    _cannon_color = Color.DARK_GRAY;
+    _cannon_color = Color.DARK_GRAY
     _range_border_color = Color.LIGHT_GRAY
 
     _turret_barrel_position = ()
@@ -33,6 +33,8 @@ class TurretTile(Tile):
     _fire_rate_clock = 0
 
     _price = 10
+
+    _damage = 5
 
     _bullet_type = BulletEnum.INSTANT_BULLET
 
@@ -93,7 +95,8 @@ class TurretTile(Tile):
                 "turret": self,
                 "enemy": nearest_enemy,
                 "start_position": self._turret_barrel_position,
-                "bullet_type": self._bullet_type
+                "bullet_type": self._bullet_type,
+                "damage": self._damage
             }
         )
 
@@ -106,3 +109,12 @@ class TurretTile(Tile):
             3,
             1
         )
+
+    def get_damage(self):
+        return self._damage
+
+    def get_range(self):
+        return self._range
+
+    def get_fire_rate(self):
+        return self._fire_rate

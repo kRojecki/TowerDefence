@@ -16,9 +16,10 @@ class Bullet(Drawable):
 
     _state = NEW
 
-    def __init__(self, position, target):
+    def __init__(self, position, target, damage):
         self._position = position
         self._target = target
+        self._damage = damage
 
     def draw(self, screen):
         pass

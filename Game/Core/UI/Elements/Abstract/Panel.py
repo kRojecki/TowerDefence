@@ -7,7 +7,7 @@ from Utils.Constant import Color
 
 class Panel(UIElement):
 
-    _size = (100, 100)
+    _size = (120, 100)
     _linked_element = None
     _surface = None
 

@@ -28,7 +28,7 @@ class Button(UIElement, Pointerable):
         super().__init__()
         self._position = position
         self._surface = pygame.Surface(self._size, pygame.SRCALPHA)
-        self._label = Label(content, (0, 0), 14)
+        self._label = Label((0, 0), content, 14)
         self._label.set_position(self._calculate_label_position())
         self._linked_element = linked_element
 
