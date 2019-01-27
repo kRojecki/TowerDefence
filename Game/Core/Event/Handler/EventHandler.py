@@ -26,10 +26,12 @@ class EventHandler:
         EventEnum.UI:                   UIEventHandler,
     }
 
-    def init(self):
-        pass
+    def init(self) -> None:
+        pygame.event.set_allowed(
+            EventEnum.get_allowed_events()
+        )
 
-    def handle(self):
+    def handle(self) -> None:
         for event in pygame.event.get():
             if event.type in self._handlers:
                 self._handlers[event.type].handle(event)

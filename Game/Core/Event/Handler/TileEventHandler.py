@@ -1,12 +1,11 @@
-class TileEventHandler:
+from Core.Event.Handler.AbstractEventHandler import AbstractEventHandler
+
+
+class TileEventHandler(AbstractEventHandler):
+
 
     @staticmethod
-    def handle(event):
-        method_name = getattr(TileEventHandler, event.sub_event)
-        method_name(event)
-
-    @staticmethod
-    def _turret_upgrade(event):
+    def _turret_upgrade(event) -> None:
         pass
 
 
