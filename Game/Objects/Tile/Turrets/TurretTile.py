@@ -93,15 +93,13 @@ class TurretTile(Tile, Fireable, Upgradeable):
         # temporary to show circle fire area
         pygame.draw.circle(
             cannon,
-            self._border_color,
+            self._range_border_color,
             (int(self._size[Position.X] / 2), int(self._size[Position.Y] / 10)),
-            3,
+            self._range,
             1
         )
 
     def _upgrade_stats(self, upgrade_dto):
-        print(self._damage)
         self._damage = upgrade_dto.get_damage()
         self._range = upgrade_dto.get_range()
         self._fire_rate = upgrade_dto.get_fire_rate()
-        print(self._damage)

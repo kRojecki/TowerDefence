@@ -13,5 +13,8 @@ class IntLabel(Label):
     def add(self, value):
         self._value += value
 
+    def set_value(self, value):
+        self._value = value
+
     def _get_content_to_show(self):
         return self._prefix + str(self._value)

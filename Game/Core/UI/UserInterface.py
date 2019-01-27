@@ -3,10 +3,12 @@ from Core.UI.Elements.IntLabel import IntLabel
 
 class UserInterface:
 
-    _elements = {}
-    _panels = []
+    _elements = None
+    _panels = None
 
     def init(self):
+        self._panels = []
+        self._elements = {}
         self._init_elements()
         pass
 

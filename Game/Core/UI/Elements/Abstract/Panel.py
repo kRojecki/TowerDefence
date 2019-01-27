@@ -11,9 +11,10 @@ class Panel(UIElement):
     _linked_element = None
     _surface = None
 
-    _elements = []
+    _elements = None
 
     def __init__(self, linked_element):
+        self._elements = []
         self._linked_element = linked_element
         self._position = pygame.mouse.get_pos()
         self._surface = pygame.Surface(self._size, pygame.SRCALPHA)
