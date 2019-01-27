@@ -17,15 +17,15 @@ class MouseEventHandler(AbstractEventHandler):
     _clip = pygame.Rect((0, 0), (0, 0))
     _active_layer = LayerEnum.TILE
 
-    @staticmethod
-    def handle(event) -> None:
-        mouse_position = MouseEventHandler._get_mouse_position()
+    @classmethod
+    def handle(cls, event) -> None:
+        mouse_position = cls._get_mouse_position()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
-            MouseEventHandler._try_hide_panel()
+            cls._try_hide_panel()
 
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONDOWN:
-            for sprite in MouseEventHandler._pointerable_objects[MouseEventHandler._active_layer]:
+            for sprite in cls._pointerable_objects[cls._active_layer]:
                 sprite.on_hover(mouse_position)
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     sprite.on_click(mouse_position)

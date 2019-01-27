@@ -10,7 +10,6 @@ class EventEnum:
     TILE = _prefix + 3
     UI = _prefix + 4
 
-
     @staticmethod
     def get_allowed_events():
         return [
