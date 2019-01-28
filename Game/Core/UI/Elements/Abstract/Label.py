@@ -2,11 +2,10 @@ import pygame
 
 from Configuration.General.Configuration import Configuration
 from Core.UI.Elements.Abstract.UIElement import UIElement
-from Objects.Abstracts.Pointerable import Pointerable
 from Utils.Constant import Color
 
 
-class Label(UIElement, Pointerable):
+class Label(UIElement):
     _font = None
     _font_color = Color.WHITE
     _prefix = ""

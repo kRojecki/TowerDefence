@@ -1,3 +1,5 @@
+import weakref
+
 import pygame
 
 import Objects.Abstracts.Pointerable
@@ -12,7 +14,7 @@ from Utils.Helper.DataSetHelper.TupleTransformer import TupleTransformer
 
 
 class MouseEventHandler(AbstractEventHandler):
-    _pointerable_objects = [[], []]
+    _pointerable_objects = [{}, {}]
 
     _clip = pygame.Rect((0, 0), (0, 0))
     _active_layer = LayerEnum.TILE
@@ -25,15 +27,22 @@ class MouseEventHandler(AbstractEventHandler):
             cls._try_hide_panel()
 
         if event.type == pygame.MOUSEMOTION or event.type == pygame.MOUSEBUTTONDOWN:
-            for sprite in cls._pointerable_objects[cls._active_layer]:
+            for key, sprite in cls._pointerable_objects[cls._active_layer].items():
                 sprite.on_hover(mouse_position)
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     sprite.on_click(mouse_position)
 
-    @staticmethod
-    def register_object(object, layer=0) -> None:
+    @classmethod
+    def register_object(cls, object, layer=0) -> None:
         if isinstance(object, Objects.Abstracts.Pointerable.Pointerable):
-            MouseEventHandler._pointerable_objects[layer].append(object)
+            cls._pointerable_objects[layer].update({
+                object.get_hash(): weakref.proxy(object)
+            })
+
+    @classmethod
+    def unregister_object(cls, object, layer=0) -> None:
+        if isinstance(object, Objects.Abstracts.Pointerable.Pointerable):
+            cls._pointerable_objects[layer].pop(object.get_hash())
 
     @staticmethod
     def set_clip(position) -> None:

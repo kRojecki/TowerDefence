@@ -4,7 +4,6 @@ from Core.UI.Elements.Abstract.Label import Label
 from Core.UI.Elements.Abstract.UIElement import UIElement
 from Objects.Abstracts.Pointerable import Pointerable
 from Utils.Constant import Color, PointableState, Position
-from Utils.Helper.DataSetHelper.TupleTransformer import TupleTransformer
 
 
 class Button(UIElement, Pointerable):

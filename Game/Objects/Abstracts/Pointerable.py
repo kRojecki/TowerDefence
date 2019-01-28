@@ -1,3 +1,6 @@
+import uuid
+import weakref
+
 import Game.Core.Event.Handler.MouseEventHandler
 from Objects.Abstracts.Clickable import Clickable
 from Game.Utils.Constant import PointableState
@@ -12,8 +15,14 @@ class Pointerable(Clickable):
 
     _state = PointableState.CLEAR
 
+    _hash = ''
+
     def __init__(self):
+        self._prepare_hash()
         Game.Core.Event.Handler.MouseEventHandler.MouseEventHandler.register_object(self, self._layer)
+
+    def __del__(self):
+        Game.Core.Event.Handler.MouseEventHandler.MouseEventHandler.unregister_object(self, self._layer)
 
     def get_position(self):
         return self._position
@@ -26,3 +35,9 @@ class Pointerable(Clickable):
 
     def _lost_focus_action(self):
         self._state = PointableState.CLEAR
+
+    def _prepare_hash(self):
+        self._hash = uuid.uuid1()
+
+    def get_hash(self):
+        return self._hash

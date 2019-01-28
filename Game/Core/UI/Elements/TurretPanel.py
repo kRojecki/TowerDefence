@@ -24,3 +24,6 @@ class TurretPanel(Panel):
     @staticmethod
     def get_clip_size():
         return TurretPanel._size
+
+    def __del__(self):
+        self._elements.clear()
