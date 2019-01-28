@@ -1,12 +1,10 @@
 import math
 import pygame
 
-
 from Utils.Constant import Color
 
 
 class Healthable:
-
     ALIVE = 0
     KILLED = 1
     COMPLETED = 2
@@ -30,18 +28,18 @@ class Healthable:
         return self._state
 
     def _draw_health_bar(self, max_bar_size):
-        health_bar_length = math.floor(self._get_health_percentage()*max_bar_size)
+        health_bar_length = math.floor(self._get_health_percentage() * max_bar_size)
 
         bar_surface = pygame.Surface((max_bar_size, 2))
-        pygame.draw.line(bar_surface, Color.BLACK, (0, 0), (max_bar_size, 0),2)
+        pygame.draw.line(bar_surface, Color.BLACK, (0, 0), (max_bar_size, 0), 2)
         pygame.draw.line(bar_surface, self._get_health_color(), (0, 0), (health_bar_length, 0), 2)
         return bar_surface
 
     def _get_health_percentage(self):
-        return self._health/self._max_health
+        return self._health / self._max_health
 
     def _get_health_color(self):
-        health_remaining = self._health/self._max_health
+        health_remaining = self._health / self._max_health
         if health_remaining > 0.75:
             return Color.GREEN
         if health_remaining > 0.5:

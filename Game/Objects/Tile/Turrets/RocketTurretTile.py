@@ -6,7 +6,6 @@ from Game.Objects.Bullet.Enum.BulletEnum import BulletEnum
 
 
 class RocketTurretTile(TurretTile):
-
     _damage = 15
     _fire_rate = 3
     _range = 75
@@ -30,6 +29,6 @@ class RocketTurretTile(TurretTile):
             0
         )
 
-        #self._draw_range_circle(cannon)
+        # self._draw_range_circle(cannon)
 
         return cannon

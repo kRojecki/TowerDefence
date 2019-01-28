@@ -104,7 +104,8 @@ class PathResolver:
             )
         )
 
-    def _get_move_vector(self, previous, forward):
+    @staticmethod
+    def _get_move_vector(previous, forward):
         return (
             forward[Position.X] - previous[Position.X],
             forward[Position.Y] - previous[Position.Y]

@@ -33,16 +33,16 @@ class MouseEventHandler(AbstractEventHandler):
                     sprite.on_click(mouse_position)
 
     @classmethod
-    def register_object(cls, object, layer=0) -> None:
-        if isinstance(object, Objects.Abstracts.Pointerable.Pointerable):
+    def register_object(cls, pointerable_object, layer=0) -> None:
+        if isinstance(pointerable_object, Objects.Abstracts.Pointerable.Pointerable):
             cls._pointerable_objects[layer].update({
-                object.get_hash(): weakref.proxy(object)
+                pointerable_object.get_hash(): weakref.proxy(pointerable_object)
             })
 
     @classmethod
-    def unregister_object(cls, object, layer=0) -> None:
-        if isinstance(object, Objects.Abstracts.Pointerable.Pointerable):
-            cls._pointerable_objects[layer].pop(object.get_hash())
+    def unregister_object(cls, pointerable_object, layer=0) -> None:
+        if isinstance(pointerable_object, Objects.Abstracts.Pointerable.Pointerable):
+            cls._pointerable_objects[layer].pop(pointerable_object.get_hash())
 
     @staticmethod
     def set_clip(position) -> None:

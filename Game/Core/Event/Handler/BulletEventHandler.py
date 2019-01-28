@@ -3,13 +3,11 @@ from Game.Core.Factory.BulletFactory import BulletFactory
 
 
 class BulletEventHandler(AbstractEventHandler):
-
     _bulletCollection = None
 
     @staticmethod
     def register_object(collection) -> None:
         BulletEventHandler._bulletCollection = collection
-
 
     @staticmethod
     def _enemy_hit(event) -> None:

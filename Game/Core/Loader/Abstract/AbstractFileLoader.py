@@ -4,7 +4,8 @@ class AbstractFileLoader:
         file = open(path, 'r')
         return self._sanitize(file.readlines())
 
-    def _sanitize(self, lines):
+    @staticmethod
+    def _sanitize(lines):
         lines[:] = [s.rstrip() for s in lines]
 
         return lines

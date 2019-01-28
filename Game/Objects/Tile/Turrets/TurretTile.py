@@ -72,7 +72,7 @@ class TurretTile(Tile, Fireable, Upgradeable):
             0
         )
 
-        #self._draw_range_circle(cannon)
+        # self._draw_range_circle(cannon)
 
         return cannon
 

@@ -26,7 +26,8 @@ class EventHandler:
         EventEnum.UI:                   UIEventHandler,
     }
 
-    def init(self) -> None:
+    @staticmethod
+    def init() -> None:
         pygame.event.set_allowed(
             EventEnum.get_allowed_events()
         )

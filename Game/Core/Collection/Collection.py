@@ -1,6 +1,3 @@
-import copy
-
-
 class Collection:
 
     _elements = None

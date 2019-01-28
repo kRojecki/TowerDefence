@@ -11,14 +11,13 @@ class TurretPanel(Panel):
         super().__init__(linked_element)
 
         self._elements.append(
+            SellButton('$', (85, 70), linked_element)
+        )
+        self._elements.append(
             TurretStatsText((5, 5), linked_element)
         )
-
         self._elements.append(
             UpgradeButton('+', (10, 70), linked_element)
-        )
-        self._elements.append(
-            SellButton('$', (85, 70), linked_element)
         )
 
     @staticmethod

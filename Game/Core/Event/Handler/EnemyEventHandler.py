@@ -6,7 +6,6 @@ from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
 class EnemyEventHandler(AbstractEventHandler):
-
     _enemyCollection = None
 
     _path = None
@@ -18,7 +17,6 @@ class EnemyEventHandler(AbstractEventHandler):
     @staticmethod
     def set_enemy_path(path) -> None:
         EnemyEventHandler._path = path
-
 
     @staticmethod
     def _enemy_killed(event) -> None:

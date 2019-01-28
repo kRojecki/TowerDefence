@@ -9,6 +9,7 @@ class TurretStatsText(Text):
     _stat_rows = None
 
     def __init__(self, position, turret) -> None:
+        super().__init__()
         self._position = position
         self._turret = turret
         self._stat_rows = dict()

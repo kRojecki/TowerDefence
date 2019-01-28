@@ -1,7 +1,7 @@
 from Objects.Tile.Turrets.TurretTile import TurretTile
 
 
-class TriangeTurret(TurretTile):
+class TriangleTurret(TurretTile):
 
     _damage = 5
     _fire_rate = 5

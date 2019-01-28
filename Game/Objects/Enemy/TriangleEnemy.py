@@ -1,7 +1,7 @@
-from Game.Objects.Enemy.Enemy import Enemy
 import pygame
+
+from Game.Objects.Enemy.Enemy import Enemy
 from Utils.Constant import Color, Position
-from Utils.Helper.TransformHelper.RotationHelper import RotationHelper
 
 
 class TriangleEnemy(Enemy):

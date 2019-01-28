@@ -8,9 +8,7 @@ from Utils.Constant.Event.SubEventEnum import SubEventEnum
 
 
 class LevelEventHandler(AbstractEventHandler):
-
     _level = None
-
 
     @staticmethod
     def register_object(level) -> None:

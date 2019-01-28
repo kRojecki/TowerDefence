@@ -4,8 +4,8 @@ class TurretUpgradeDTO:
     _damage = 0
     _fire_rate = 0
 
-    def __init__(self, range, damage, fire_rate):
-        self._range = range
+    def __init__(self, fire_range, damage, fire_rate):
+        self._range = fire_range
         self._damage = damage
         self._fire_rate = fire_rate
 

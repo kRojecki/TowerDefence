@@ -13,6 +13,7 @@ class Label(UIElement):
     _font_name = None
 
     def __init__(self, position, prefix, font_size=12):
+        super().__init__()
         self._font_name = Configuration.get_str('DISPLAY', 'font.name')
         self._font = pygame.font.SysFont(self._font_name, font_size)
         self._position = position

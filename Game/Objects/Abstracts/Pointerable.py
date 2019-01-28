@@ -1,9 +1,8 @@
 import uuid
-import weakref
 
 import Game.Core.Event.Handler.MouseEventHandler
-from Objects.Abstracts.Clickable import Clickable
 from Game.Utils.Constant import PointableState
+from Objects.Abstracts.Clickable import Clickable
 
 
 class Pointerable(Clickable):

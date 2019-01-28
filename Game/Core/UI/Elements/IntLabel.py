@@ -1,5 +1,4 @@
 from Core.UI.Elements.Abstract.Label import Label
-from Utils.Constant import Color
 
 
 class IntLabel(Label):

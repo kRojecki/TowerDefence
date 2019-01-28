@@ -47,10 +47,10 @@ class GameEngine:
             # set clock to fixed 60 fps
             self._clock.tick(self.FIXED_FPS)
 
-            # handle system events like closing aplication
+            # handle system events like closing application
             self._handle_events()
 
-            # fill whole area in color, everything is redrawed every frame
+            # fill whole area in color, everything is draw again every frame
             self._main_surface.fill(Color.BLACK)
 
             # update screen by actual screen
