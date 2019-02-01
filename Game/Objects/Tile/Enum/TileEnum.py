@@ -5,3 +5,6 @@ class TileEnum:
     ENEMY_PATH_TILE = 'Game.Objects.Tile.Path.EnemyPath.EnemyPath'
     ENEMY_STARTING_PATH_TILE = 'Game.Objects.Tile.Path.EnemyStartingPointPath.EnemyStartingPointPath'
     ENEMY_END_PATH_TILE = 'Game.Objects.Tile.Path.EnemyEndPointPath.EnemyEndPointPath'
+
+    SMALL_TURRET_TILE_SHORT = 'TriangleTurret'
+    ROCKET_TURRET_TILE_SHORT = 'RocketTurretTile'

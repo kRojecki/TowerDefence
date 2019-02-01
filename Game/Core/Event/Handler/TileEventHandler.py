@@ -1,5 +1,5 @@
 from Core.Event.Handler.AbstractEventHandler import AbstractEventHandler
-from Core.Resolver.TurretUpgradeResolver import TurretUpgradeResolver
+from Core.Resolver.Upgrade.TurretUpgradeResolver import TurretUpgradeResolver
 
 
 class TileEventHandler(AbstractEventHandler):
