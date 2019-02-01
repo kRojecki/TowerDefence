@@ -30,7 +30,8 @@ class MouseEventHandler(AbstractEventHandler):
             for key, sprite in cls._pointerable_objects[cls._active_layer].items():
                 sprite.on_hover(mouse_position)
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    sprite.on_click(mouse_position)
+                    button_pressed = pygame.mouse.get_pressed()
+                    sprite.on_click(mouse_position, button_pressed)
 
     @classmethod
     def register_object(cls, pointerable_object, layer=0) -> None:

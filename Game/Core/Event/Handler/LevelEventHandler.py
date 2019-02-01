@@ -16,11 +16,7 @@ class LevelEventHandler(AbstractEventHandler):
 
     @staticmethod
     def _tile_clicked(event) -> None:
-        EventDispatcher.dispatch(
-            EventEnum.UI,
-            SubEventEnum.HIDE_PANEL,
-            {}
-        )
+        LevelEventHandler._hide_panel()
         TileClickResolver.resolve(event, LevelEventHandler._level)
 
     @staticmethod
@@ -53,6 +49,10 @@ class LevelEventHandler(AbstractEventHandler):
                 "money": event.tile.get_sell_price(),
             }
         )
+        LevelEventHandler._hide_panel()
+
+    @classmethod
+    def _hide_panel(cls):
         EventDispatcher.dispatch(
             EventEnum.UI,
             SubEventEnum.HIDE_PANEL,

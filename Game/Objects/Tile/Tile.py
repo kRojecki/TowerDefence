@@ -67,6 +67,6 @@ class Tile(Pointerable, Drawable, Changeable, Priceable):
             SubEventEnum.TILE_CLICKED,
             {
                 "tile": self,
-                "button": button
+                "buttons_pressed": button
             }
         )
